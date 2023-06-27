@@ -14,8 +14,6 @@ class VideoModel extends Model
     protected $primaryKey = 'video_id';
     protected $fillable = [
         'video_path',
-        'video_name',
-        'video_description',
         'status',        
         'created_at',
         'created_by',

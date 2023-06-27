@@ -44,12 +44,12 @@ class LoginRequest extends FormRequest
         // we have to check if user has entered one or another
         $username = $this->get('username');
 
-        if ($this->isEmail($username)) {
+        // if ($this->isEmail($username)) {
             return [
                 'email' => $username,
                 'password' => $this->get('password')
             ];
-        }
+        // }
 
         return $this->only('username', 'password');
     }

@@ -1,5 +1,43 @@
 @extends('layouts.auth-master')
 
+<style>
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body.text-center {
+    background: #71bbd9;
+}
+
+    main.form-signin {
+    min-width: 500px;
+    align-items: center;
+    background: rgba(255,255,255,0.3);
+    padding: 20px;
+    border-radius:20px;
+    /* background: #71bbd9; */
+}
+
+
+
+
+@media screen and (max-width: 540px) {   
+     main.form-signin {
+    min-width: 300px;
+}
+}
+
+@media screen and (max-width: 300px) {   
+     main.form-signin {
+    min-width: 250px;
+}
+}
+
+</style>
 @section('content')
     <form method="post" action="{{ route('login.perform') }}">
         
@@ -11,8 +49,8 @@
         @include('layouts.partials.messages')
 
         <div class="form-group form-floating mb-3">
-            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username" required="required" autofocus>
-            <label for="floatingName">Email or Username</label>
+            <input type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Employee Id" required="required" autofocus>
+            <label for="floatingName">Employee Id</label>
             @if ($errors->has('username'))
                 <span class="text-danger text-left">{{ $errors->first('username') }}</span>
             @endif

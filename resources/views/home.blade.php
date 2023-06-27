@@ -40,11 +40,14 @@
                <div class="col-lg-6">
                   <div class="col-lg-12">
                      <div class="banner_text ">
-                        <h1> Hello  Dr.<span style="color:brown">Ravi Tiwari</span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
-                        <form>
+                        <h1> Hello  Dr.<span style="color:brown">{{ $doctor->firstname }} </span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
+                        <form action="{{ route('doctors.upload') }}" method="post" enctype="multipart/form-data">
+                           @csrf
                            <div class="drop-zone">
+                           <input type="hidden" name="dr_id" value="{{ $doctor->id }}">
+                           <input type="hidden" name="so_id" value="{{ $doctor->soid }}">
                               <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                              <input type="file" name="myFile" class="drop-zone__input">
+                              <input type="file" name="video_path" class="drop-zone__input">
                            </div>
                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
                         </form>
@@ -54,7 +57,7 @@
             </div>
          </div>
       </div>
-      {{-- <div class="timeline-cover pt-4">
+      <div class="timeline-cover pt-4">
          <div class="text-center">
             <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo">
             <h1>ENHANCE YOUR DIGITAL PRESENCE<br>WITH<br>AJANTA PHARMA LIMITED!</h1>
@@ -145,7 +148,7 @@
                </div>
             </div>
          </div>
-      </div> --}}
+      </div>
       <script>
          document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
            const dropZoneElement = inputElement.closest(".drop-zone");
@@ -221,7 +224,7 @@
          
            const fileInput = document.querySelector('.drop-zone__input');
            const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
-           const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
+           const maxSizeInBytes = 5 * 1024 * 1024; // 2MB
          
            const file = fileInput.files[0];
          

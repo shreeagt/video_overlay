@@ -41,7 +41,8 @@
               <a href="#" class="dashboard_sidebar_toggle_icon text-thm1 vam"><i class="fa-sharp fa-solid fa-bars-staggered"></i></a>
             </div>
             <div class="dashboard_header_logo">
-              <a href="/" class="logo">Ajanta<span class="text-thm">.</span></a>
+              <a href="/" class="logo"><span class="text-thm">.</span></a>
+              <img src={{asset('Optidewlogo.png')}}>
             </div>
           </div>
         </div>

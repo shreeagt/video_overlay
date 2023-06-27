@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DoctorsController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 // Route::get('/dashboard', function() {
 //     return view('dashboard');
@@ -73,12 +75,32 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
        
     });
 
+    Route::group(['middleware' => ['auth', 'role:so']], function () {
+        Route::get('/doctors/create', 'DoctorsController@create')->name('doctors.create');
+        Route::post('/doctors/create', 'DoctorsController@insertdoctors')->name('doctors.insert');
+        Route::get('/doctors/show', 'DoctorsController@showdoctors')->name('doctors.show');
+        // Route::get('/doctors/home/{doctor}', 'DoctorsController@link')->name('doctors.link');
+        // Route::post('/doctors/upload', 'DoctorsController@upload')->name('doctors.upload');
+        Route::delete('/doctors/{doctor}', 'DoctorsController@destroy')->name('doctors.destroy');
+        Route::get('/doctors/{doctor}/edit', [DoctorsController::class, 'edit'])->name('doctors.edit');
+        Route::put('/doctors/{doctor}', [DoctorsController::class, 'update'])->name('doctors.update');
+    });
     // Route::group(['middleware' => ['auth', 'role:so']], function () {
     //     Route::get('/doctors/create', 'DoctorsController@create')->name('doctors.create');
     //     Route::post('/doctors/create', 'DoctorsController@insertdoctors')->name('doctors.insert');
     // });
 
+
+
     Route::get('/videocreate', 'VideoController@create')->name('videocreate');
     Route::post('/videsave', 'VideoController@store')->name('videosave');
     Route::patch('/{video_id}/update', 'VideoController@update')->name('videoupdate');
 });
+
+Route::group(['namespace' => 'App\Http\Controllers'], function() {
+    Route::get('/doctors/home/{doctor}', 'DoctorsController@link')->name('doctors.link');
+    Route::post('/doctors/upload', 'DoctorsController@upload')->name('doctors.upload');
+});
+
+Route::get('/videoLis/{id}', [VideoController::class, 'updatevideo'])->name('videoList.update');
+Route::get('/videoLiis/{id}', [VideoController::class, 'rject'])->name('videoLiist.reject');

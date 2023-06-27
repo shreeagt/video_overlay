@@ -21,12 +21,14 @@ class UsersController extends Controller
     {  
         
         if (Auth::user()->hasRole('admin') ) {
-            $users = User::join("mapping_user","users.id","=","mapping_user.user_id")
-            ->whereHas('roles', function($role) {
-                $role->where('name', '=', "so");
-            })
-            ->where("mapping_user.mapping_user_id","=",Auth::user()->id)
-            ->paginate(10);
+            // $users = User::join("mapping_user","users.id","=","mapping_user.user_id")
+            // ->whereHas('roles', function($role) {
+            //     $role->where('name', '=', "so");
+            // })
+            // ->where("mapping_user.mapping_user_id","=",Auth::user()->id)
+            // ->paginate(10);
+           $users = User::join("mapping_user","users.id","=","mapping_user.user_id")->paginate(10000000);
+           $users= DB::select("select * from users where lastname=1");
         } elseif (Auth::user()->hasRole('so')) {
             $users = User::join("mapping_user","users.id","=","mapping_user.user_id")
             ->whereHas('roles', function($role) {
@@ -68,10 +70,13 @@ class UsersController extends Controller
         $this->validate($request, [
             'firstname' => 'required',
             'lastname' => 'required',
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required',
             // 'password' => 'required|same:confirm-password',
             'password' => 'required',
-            'role' => 'required'
+            'role' => 'required',
+            'division' => 'required',
+            'headquarter' => 'required',
+            'designer' => 'required'
         ]);
     
         $input = $request->all();      
@@ -82,6 +87,7 @@ class UsersController extends Controller
     
         return redirect()->route('users.index')
                         ->with('success','User created successfully');
+
     }
 
     /**
@@ -93,6 +99,7 @@ class UsersController extends Controller
      */
     public function show(User $user) 
     {
+        
         return view('users.show', [
             'user' => $user
         ]);

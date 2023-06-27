@@ -1,35 +1,38 @@
+<style>
+  a.active{
+    background-color: #75bdd9;
+    color: #041E42;
+  }
+</style>
 <div class="dashboard_content_wrapper">
     <div class="dashboard dashboard_wrapper pr30 pr0-md">
       <div class="dashboard__sidebar">
 
         <div class="dashboard_sidebar_list">
-        <div class="sidebar_list_item">
-              <a href="{{ route('home.index') }}" class="items-center "><i class="flaticon-house mr15"></i>Home</a>
-            </div>
+        <!-- <div class="sidebar_list_item">
+              <a href="{{ route('home.index') }}" class="{{ request()->routeIs('home.index') ? 'active' : '' }} items-center "><i class="flaticon-house mr15"></i>Home</a>
+            </div> -->
         @auth
             @role('admin')
             <div class="sidebar_list_item">
-              <a href="{{ route('users.index') }}" class="items-center "><i class="flaticon-house mr15"></i>Users</a>
+              <a href="{{ route('users.index') }}" class="{{ request()->routeIs('users.index') ? 'active' : '' }} items-center "><i class="flaticon-house mr15"></i>Users</a>
             </div>
             <div class="sidebar_list_item">
-              <a href="{{ route('roles.index') }}" class="items-center"><i class="flaticon-cash-on-delivery mr15"></i>Roles</a>
+              <a href="{{ route('roles.index') }}" class="{{ request()->routeIs('roles.index') ? 'active' : '' }} items-center"><i class="flaticon-cash-on-delivery mr15"></i>Roles</a>
             </div>
             <div class="sidebar_list_item">
-              <a href="{{ route('videoList') }}" class="items-center"><i class="flaticon-cash-on-delivery mr15"></i>Video</a>
+              <a href="{{ route('videoList') }}" class="{{ request()->routeIs('videoList') ? 'active' : '' }} items-center"><i class="flaticon-cash-on-delivery mr15"></i>Video</a>
             </div>
             @endrole
             @role('so')
             <div class="sidebar_list_item">
-              <a href="{{ route('roles.index') }}" class="items-center"><i class="flaticon-cash-on-delivery mr15"></i>Roles</a>
+              <a href="{{ route('videoList') }}" class="{{ request()->routeIs('videoList') ? 'active' : '' }} items-center"><i class="flaticon-cash-on-delivery mr15"></i>Video</a>
             </div>
             <div class="sidebar_list_item">
-              <a href="{{ route('videoList') }}" class="items-center"><i class="flaticon-cash-on-delivery mr15"></i>Video</a>
-            </div>
-            <!-- <div class="sidebar_list_item">
-              <a href="{{ route('doctors.create') }}" class="items-center">
-                <i class="flaticon-house mr15"></i>Add Doctors
+              <a href="{{ route('doctors.show') }}" class="items-center">
+                <i class="flaticon-house mr15"></i>Doctors
               </a>
-            </div> -->
+            </div>
             @endrole
           
             
