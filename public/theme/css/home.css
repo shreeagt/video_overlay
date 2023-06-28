@@ -10,7 +10,14 @@
     font-family: 'tt-fors-regular';
     src: url('/fonts/tt-fors-regular.ttf') format('truetype');
   }
-  
+
+  @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+  .redley-text{
+    font-family: 'Cedarville Cursive', cursive;
+    font-style: italic;
+    font-weight: 500;
+  }
   .timeline-cover{
       background-image: url('/assets/images/home/background.png');
       background-repeat: no-repeat;
@@ -188,9 +195,9 @@
   
   
   @media screen and (max-width:540px){
-     .banner-wrapper{
+     /* .banner-wrapper{
         height:auto;
-     }
+     } */
   
      .timeline-cover h1 {
       font-size: 18px;
@@ -212,4 +219,11 @@
   .timeline__image {
       width: 28%;
   }
+  }
+
+  @media screen and (max-width:768px){
+    .banner-wrapper{
+      /* background-color: rgb(0, 0, 0); */
+      background-image: url('/assets/images/video_mob_banner.png');
+      }
   }

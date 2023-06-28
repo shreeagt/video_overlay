@@ -36,7 +36,7 @@
                                     No Logo
                                 @endif</td>
                             <td>{{ $doctor->email }}</td>
-                            <td><a href="{{ route('doctors.link', ['doctor' => $doctor->id]) }}" class="btn btn-success">Link</td>
+                            <td><a href="{{ route('doctors.link', ['doctor' => $doctor->id]) }}" class="btn btn-success">Link</a><a class="btn  btn-primary copy-icon ml10" data-copy="{{ route('doctors.link', ['doctor' => $doctor->id]) }}">Copy</a></td>
                             <td>
                                 <a href="{{ route('doctors.edit', ['doctor' => $doctor->id]) }}" class="btn btn-info">Edit</a>
                                 <a href="{{ route('doctors.destroy', ['doctor' => $doctor->id]) }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $doctor->id }}').submit();">Delete</a>
@@ -51,5 +51,29 @@
             </table>
         </div>
     </div>
+
+
+    <script>
+
+  const copyButtons = document.querySelectorAll('.copy-icon');
+
+  copyButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const copyText = button.getAttribute('data-copy');
+      const tempInput = document.createElement('input');
+      tempInput.value = copyText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.classList.remove('copied');
+      }, 2000);
+    });
+  });
+
+
+    </script>
 @endsection
 
