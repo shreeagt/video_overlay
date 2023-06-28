@@ -117,6 +117,7 @@
                                         <video src="{{ asset($video_for_modal) }}" controls
                                             style="justify-content-center align-item-center"></video>
                                     </div>
+                                </div>
                             </tr>
                             @php $i++;@endphp
                         @endforeach
@@ -138,26 +139,28 @@
 
     <!-- Modal for the video player -->
 
-    <script>
-        var playButton = document.getElementsByClassName("playbtn_video");
-        console.log(playButton.length);
-        var videoModal = document.getElementsByClassName("open_video");
-        var closeModal = document.getElementsByClassName("close_video");
-        var videoElement = document.getElementsByTagName("video");
 
-        for (let i = 0; i < playButton.length; i++) {
-            // console.log("ok");
-            playButton[i].addEventListener("click", function() {
-                videoModal[i].style.display = "flex";
-            })
-        }
 
-        for (let i = 0; i < playButton.length; i++) {
-            closeModal[i].addEventListener("click", function() {
-                videoElement[i].pause();
-                videoModal[i].style.display = "none";
+<script>
+    var playButton = document.getElementsByClassName("playbtn_video");
+    console.log(playButton.length);
+    var videoModal = document.getElementsByClassName("open_video");
+    var closeModal = document.getElementsByClassName("close_video");
+    var videoElement = document.getElementsByTagName("video");
 
-            })
-        }
-    </script>
+    for (let i = 0; i < playButton.length; i++) {
+        // console.log("ok");
+        playButton[i].addEventListener("click", function() {
+            videoModal[i].style.display = "flex";
+        })
+    }
+
+    for (let i = 0; i < playButton.length; i++) {
+        closeModal[i].addEventListener("click", function() {
+            videoElement[i].pause();
+            videoModal[i].style.display = "none";
+
+        })
+    }
+</script>
 @endsection
