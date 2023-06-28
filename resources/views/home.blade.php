@@ -42,6 +42,9 @@
                      <div class="banner_text ">
                         <h1> Hello  Dr.<span style="color:brown">{{ $doctor->firstname }} </span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
                         <form action="{{ route('doctors.upload') }}" method="post" enctype="multipart/form-data">
+                           <div class="mt-2">
+                              @include('layouts.partials.messages')
+                          </div>
                            @csrf
                            <div class="drop-zone">
                            <input type="hidden" name="dr_id" value="{{ $doctor->id }}">
