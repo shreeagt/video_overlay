@@ -27,14 +27,25 @@
       <![endif]-->
       <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
    </head>
+
+   <style>
+     /* .banner-wrapper h1{
+      font-size:18px;
+      } */
+
+   </style>
    <body>
       <div class="banner-wrapper pt-md-0 pt-5">
-         <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo logoposition">
+         {{-- <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo logoposition"> --}}
+         <img src="{{asset('Optidewlogo.png')}}" alt="logo" class="logo logoposition">
          <div class="container">
             <div class="row justify-content-center align-items-center">
                <div class="col-lg-6">
                   <div class="img-shree-cover">
-                     <img src="{{asset('assets/images/home/doc.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs">
+                     {{-- <img src="{{asset('assets/images/home/doc.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs"> --}}
+                     <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs">
+                     {{-- <h2 class="redley-text">An initiative by</h2> --}}
+                     <h2 class="redley-text"></h2>
                   </div>
                </div>
                <div class="col-lg-6">
@@ -49,15 +60,17 @@
                               <span class="drop-zone__prompt">Drop file here or click to upload</span>
                               <input type="file" name="video_path" class="drop-zone__input">
                            </div>
+                    
                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
                         </form>
+                       </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="timeline-cover pt-4">
+      {{-- <div class="timeline-cover pt-4">
          <div class="text-center">
             <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo">
             <h1>ENHANCE YOUR DIGITAL PRESENCE<br>WITH<br>AJANTA PHARMA LIMITED!</h1>
@@ -148,7 +161,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
       <script>
          document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
            const dropZoneElement = inputElement.closest(".drop-zone");
@@ -254,6 +267,33 @@
          
          const form = document.querySelector('form');
          form.addEventListener('submit', validateForm);
+
+         
       </script>
+
+{{-- <h2 class="redley-text"></h2> --}}
+
+<script>
+  // Get the target element
+  const element = document.querySelector('.redley-text');
+  // Define the text to be displayed
+  const text = 'An initiative by';
+  let index = 0;
+
+  // Function to update the text content
+  function updateText() {
+    element.textContent = text.slice(0, index);
+
+    // Increment the index until the whole text is displayed
+    if (index < text.length) {
+      index++;
+      setTimeout(updateText, 100); // Delay between each letter (in milliseconds)
+    }
+  }
+
+  // Call the function to start displaying the text
+  updateText();
+</script>
+
    </body>
 </html>

@@ -36,13 +36,15 @@
     <div class="header__container pt20 pb20 pl30 pr30">
       <div class="row justify-between items-center">
         <div class="col-sm-4 col-xl-2">
-          <div class="text-center text-lg-start d-flex mb15-520">
+          <div class="text-center text-lg-start d-flex mb15-520 align-items-center">
             <div class="fz20 me-4">
               <a href="#" class="dashboard_sidebar_toggle_icon text-thm1 vam"><i class="fa-sharp fa-solid fa-bars-staggered"></i></a>
             </div>
             <div class="dashboard_header_logo">
-              <a href="/" class="logo"><span class="text-thm">.</span></a>
+              <a href="/" class="logo">
+                {{-- <span class="text-thm">.</span> --}}
               <img src={{asset('Optidewlogo.png')}}>
+            </a>
             </div>
           </div>
         </div>

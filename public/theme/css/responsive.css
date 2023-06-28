@@ -813,6 +813,7 @@
 	.mega_dropdown_content_closer h5{margin-top: 5px;}
 	.shop_single_natabmenu .product_popup{right: 0;}
 	.custom_nav_list{position: absolute;bottom: -20px;}
+	.dashboard__sidebar {margin-top: 120px;}
 
 }
 /* (min-width:361px) (max-width:520px) */
