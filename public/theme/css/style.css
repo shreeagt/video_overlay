@@ -11258,7 +11258,8 @@ span.active_status.active{
 .dashboard_sidebar_list .sidebar_list_item a:active,
 .dashboard_sidebar_list .sidebar_list_item a:focus,
 .dashboard_sidebar_list .sidebar_list_item a.-is-active {
-  background-color: #F5C34B;
+  /* background-color: #F5C34B; */
+  background-color: #1981b3;
   color: #041E42;
 }
 .dashboard.dsh_board_sidebar_hidden .dashboard__sidebar {

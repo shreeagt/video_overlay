@@ -195,9 +195,9 @@
   
   
   @media screen and (max-width:540px){
-     .banner-wrapper{
+     /* .banner-wrapper{
         height:auto;
-     }
+     } */
   
      .timeline-cover h1 {
       font-size: 18px;
