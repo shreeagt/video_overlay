@@ -148,19 +148,16 @@ video#videoPlayer {
     <div class="thank_banner">
         <div class="thank">
             <h1>THANK YOU!</h1>
-                <div>
-                    <span><i class="fa fa-check" style="font-size:36px"></i></span>
-                </div>
-                <div class="video_box">
-                    <h2 style="">Preview</h2>
-                    <video id="videoPlayer" controls>
-                        {{-- <source src="{{asset('/videos/gallery/sample-5s.mp4')}}" type="video/mp4"> --}}
-                        <source src="{{ $video->outputvideo }}" type="video/mp4">
-                
-                      </video>
-                </div>
-                
-            {{-- <button class="download-button preview">Preview</button> --}}
+            <div>
+                <span><i class="fa fa-check" style="font-size:36px"></i></span>
+            </div>
+            <div>
+                <h2>Preview</h2>
+                <video id="videoPlayer" controls>
+                    <source src="/videos/gallery/{{ $video->video_path }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <button class="download-button">Download</button>
         </div>
     </div>

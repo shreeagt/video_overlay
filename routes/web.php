@@ -29,7 +29,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/home', 'HomeController@index')->name('home.index');
-    Route::get('thankyou/{id}', 'HomeController@thank')->name('thankyou'); 
+    Route::get('/thank_you/{id}', 'HomeController@thank');
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -101,7 +101,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('/doctors/home/{doctor}', 'DoctorsController@link')->name('doctors.link');
     Route::post('/doctors/upload', 'DoctorsController@upload')->name('doctors.upload');
+    Route::get('/thank_you/{id}', 'HomeController@thank');
 });
 
 Route::get('/videoLis/{id}', [VideoController::class, 'updatevideo'])->name('videoList.update');
 Route::get('/videoLiis/{id}', [VideoController::class, 'rject'])->name('videoLiist.reject');
+

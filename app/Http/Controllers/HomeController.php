@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,15 +19,11 @@ class HomeController extends Controller
     }
 
     public function thank($id)
-    {
-        
-        $video = DB::table('videos')->where('id', $id)->select('id', 'outputvideo')->first();
+{
+    $video = Videos::findOrFail($id);
+    return view('home.thank');
+}
 
-        return view('home.thank', ['video' => $video]);    
-  
-        // return view('home.thank', ['id' => $id]);
-
-    }
 
     /**
      * Show the form for creating a new resource.
