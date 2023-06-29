@@ -6,17 +6,42 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+        /* background-color: rgb(0, 0, 0); */
+        position: relative;
+    background-image: url('/assets/images/login_banner.jpg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 0;
 }
 
-body.text-center {
+.logo img {
+    max-width: 150px;
+}
+
+.logo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo_position {
+    right: unset;
+    left: 10px;
+}
+/* body.text-center {
     background: #71bbd9;
-}
+} */
 
     main.form-signin {
     min-width: 500px;
     align-items: center;
     background: rgba(255,255,255,0.3);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 1.2);
     padding: 20px;
     border-radius:20px;
     /* background: #71bbd9; */
@@ -39,6 +64,15 @@ body.text-center {
 
 </style>
 @section('content')
+
+<a href="/" class="logo">
+    <img src="{{asset('Optidewlogo.png')}}">
+  </a>
+
+<a href="/" class="logo logo_position">
+    <img src="{{asset('assets/images/ajanta-logo.png')}}">
+  </a>
+
     <form method="post" action="{{ route('login.perform') }}">
         
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
