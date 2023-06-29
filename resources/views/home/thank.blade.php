@@ -116,9 +116,27 @@
     z-index: 4;
 }
 
+
+video#videoPlayer {
+    max-width: 100%;
+}
+
+.video_box {
+    padding: 10px;
+    background: #598b9e;
+    border-radius: 20px;
+    max-width: 500px;
+    max-height: 500px;
+}
 *{
     margin:0;
     padding:0;
+}
+
+@media screen and (max-width: 768px){
+    .thank_banner {
+    background-image: url('/assets/images/thank_mob.png');
+}
 }
 </style>
 <body>
@@ -133,11 +151,12 @@
                 <div>
                     <span><i class="fa fa-check" style="font-size:36px"></i></span>
                 </div>
-                <div>
+                <div class="video_box">
                     <h2 style="">Preview</h2>
                     <video id="videoPlayer" controls>
-                        <source src="path_to_your_video.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
+                        {{-- <source src="{{asset('/videos/gallery/sample-5s.mp4')}}" type="video/mp4"> --}}
+                        <source src="{{ $video->outputvideo }}" type="video/mp4">
+                
                       </video>
                 </div>
                 
@@ -145,5 +164,17 @@
             <button class="download-button">Download</button>
         </div>
     </div>
+
+    <script>
+        document.querySelector('.download-button').addEventListener('click', function() {
+            var videoSrc = document.querySelector('video source').getAttribute('src');
+            var link = document.createElement('a');
+            link.href = videoSrc;
+            link.download = videoSrc.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
 </html>

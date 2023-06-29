@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,9 +17,15 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-    public function thank()
+    public function thank($id)
     {
-        return view('home.thank');
+        
+        $video = DB::table('videos')->where('id', $id)->select('id', 'outputvideo')->first();
+
+        return view('home.thank', ['video' => $video]);    
+  
+        // return view('home.thank', ['id' => $id]);
+
     }
 
     /**
