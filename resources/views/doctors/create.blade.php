@@ -84,6 +84,18 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="speciality" class="form-label">Speciality</label>
+                    <input value="{{ old('speciality') }}" 
+                        type="text" 
+                        class="form-control" 
+                        name="speciality" 
+                        placeholder="Speciality" required>
+                    @if ($errors->has('speciality'))
+                        <span class="text-danger text-left">{{ $errors->first('speciality') }}</span>
+                    @endif
+                </div>
+
+                <div class="mb-3">
                     <label for="city" class="form-label">City</label>
                     <input value="{{ old('city') }}" 
                         type="text" 

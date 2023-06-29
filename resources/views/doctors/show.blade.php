@@ -16,6 +16,7 @@
                         <th>Clinic Name</th>
                         <th>Contact No</th>
                         <th>City</th>
+                        <th>Speciality</th>
                         <th>Logo</th>
                         <th>Email</th>
                         <th>Link</th>
@@ -30,6 +31,7 @@
                             <td>{{ $doctor->lastname }}</td>
                             <td>{{ $doctor->contacno }}</td>
                             <td>{{ $doctor->city }}</td>
+                            <td>{{ $doctor->speciality }}</td>
                             <td>@if ($doctor->logo)
                                     <img src="{{ asset('logos/'.$doctor->logo) }}" alt="Logo" width="50" height="50">
                                 @else

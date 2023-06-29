@@ -29,6 +29,7 @@ class DoctorsController extends Controller
     $idoctor->email = $request->input('email');
     $idoctor->contacno = $request->input('contacno');
     $idoctor->city = $request->input('city');
+    $idoctor->speciality = $request->input('speciality');
 
     if ($request->hasFile('logo')) {
         $logo = $request->file('logo');
@@ -82,6 +83,7 @@ class DoctorsController extends Controller
         // $doctor->role = $request->input('role');
         $doctor->contacno = $request->input('contacno');
         $doctor->city = $request->input('city');
+        $doctor->speciality = $request->input('speciality');
 
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->getClientOriginalName();
@@ -125,6 +127,8 @@ class DoctorsController extends Controller
     // Assign the 'drid' and 'so_id' values to the respective columns of the 'Videos' model
     $video->drid = $request->dr_id; 
     $video->so_id = $request->so_id; 
+    
+
     $video->save();
 
     // Redirect to another page with the doctor's details
