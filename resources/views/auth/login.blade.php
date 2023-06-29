@@ -47,7 +47,12 @@ body {
     /* background: #71bbd9; */
 }
 
+@media screen and (max-width: 768px){
+    body {
+    background-image: url('/assets/images/login_mob.jpg');
+}
 
+}
 
 
 @media screen and (max-width: 540px) {   

@@ -42,7 +42,7 @@
 
 .thank {
     max-width: 600px;
-    margin: auto;
+    margin: 10px;
     text-align: center;
     /* background: rgba(25,129,179,0.5); */
     background: rgba(0,0,0,0.5);
@@ -50,7 +50,7 @@
     border-radius: 20px;
 }
 .thank h1 {
-    font-size: 70px;
+    font-size: 50px;
     color: #75bdd9;
 }
 
@@ -65,7 +65,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+        /* background-color: rgb(0, 0, 0); */
+        position: relative;
+    background-image: url('/assets/images/thank_you.jpg');
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 0;
 
+}
+
+.thank_banner::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 0;
+    width: 100%;
+    content: '';
 }
 
 .thank span {
@@ -81,6 +105,16 @@
     background: #ffc107;
 }
 
+.logo img {
+    max-width: 150px;
+}
+
+.logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 4;
+}
 
 *{
     margin:0;
@@ -88,6 +122,11 @@
 }
 </style>
 <body>
+
+    <a href="/" class="logo">
+        <img src="{{asset('Optidewlogo.png')}}">
+      </a>
+
     <div class="thank_banner">
         <div class="thank">
             <h1>THANK YOU!</h1>
