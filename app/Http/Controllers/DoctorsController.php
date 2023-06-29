@@ -17,7 +17,7 @@ class DoctorsController extends Controller
         return view('doctors.create');
     }
     public function insertdoctors(Request $request)
-   {
+{
     $folderPath = public_path('logos');
     if (!file_exists($folderPath)) {
         mkdir($folderPath, 0777, true);
@@ -31,21 +31,22 @@ class DoctorsController extends Controller
     $idoctor->city = $request->input('city');
 
     if ($request->hasFile('logo')) {
-        $logoPath = $request->file('logo')->getClientOriginalName();
-        $request->file('logo')->move($folderPath, $logoPath);
         $logo = $request->file('logo');
-        // $logoPath = $logo->storeAs('logos', 'logo.png');
+        $logoPath = $logo->getClientOriginalExtension();
+        $logoName = uniqid().'.'.$logoPath;
+        $logo->move($folderPath, $logoName);
         
         // Save the file path or URL to your model or database if needed
-        $idoctor->logo = $logoPath;
+        $idoctor->logo = $logoName;
     }
+
     // Retrieve the soid from the users table and assign it to the soid column of the Doctors model
     $soid = Auth::id();
     $idoctor->soid = $soid;
 
     $idoctor->save();
     return redirect()->route('doctors.show')->with('success', 'Doctor Successfully added');
-    }
+}
 
     public function showdoctors()
     {
@@ -112,20 +113,22 @@ class DoctorsController extends Controller
     if (!file_exists($folderPath)) {
         mkdir($folderPath, 0777, true);
     }
-    //DB::connection()->enableQueryLog();
+
+    $extension = $request->file('video_path')->getClientOriginalExtension();
+
     // Store the file in the public/videos/gallery folder
     $video = new Videos();
-    $video->video_path = $request->file('video_path')->getClientOriginalName(); // Store the original filename in the 'video_path' field
-    $request->file('video_path')->move($folderPath, $video->video_path); // Save the video to the public/videos/gallery folder
+    $video->video_path = uniqid().'.'.$extension;
+    $request->file('video_path')->move($folderPath, $video->video_path);
 
-    // Assign the 'drid' value to the 'drid' column of the 'Videos' model
+
+    // Assign the 'drid' and 'so_id' values to the respective columns of the 'Videos' model
     $video->drid = $request->dr_id; 
     $video->so_id = $request->so_id; 
     $video->save();
-    // $queries = DB::getQueryLog();
-    // dd($queries);
 
-    // You can perform additional actions here, such as sending notifications or processing the video further
-    return redirect()->back()->with('success', 'Video uploaded successfully.');
+    // Redirect to another page with the doctor's details
+    header("Location: /script_optidew.php?video_id=".$video->id);
+    die();
 }
 }

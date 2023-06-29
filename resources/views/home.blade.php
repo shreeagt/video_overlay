@@ -240,7 +240,7 @@
          
            const fileInput = document.querySelector('.drop-zone__input');
            const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
-           const maxSizeInBytes = 5 * 1024 * 1024; // 2MB
+           const maxSizeInBytes = 10 * 1024 * 1024; // 2MB
          
            const file = fileInput.files[0];
          
