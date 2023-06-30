@@ -19,11 +19,19 @@ class HomeController extends Controller
     }
 
     public function thank($id)
+// {
+//     $video = Videos::findOrFail($id);
+//     return view('home.thank');
+// }
 {
-    $video = Videos::findOrFail($id);
-    return view('home.thank');
-}
+        
+    $video = DB::table('videos')->where('id', $id)->select('id', 'outputvideo')->first();
 
+    return view('home.thank', ['video' => $video]);    
+
+    // return view('home.thank', ['id' => $id]);
+
+}
 
     /**
      * Show the form for creating a new resource.

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\VideoModel;
 use App\Models\Doctors;
+use App\Models\Videos;
 use App\Models\User;
 use DB;
 use Auth;

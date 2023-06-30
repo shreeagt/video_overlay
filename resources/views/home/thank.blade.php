@@ -118,7 +118,8 @@
 
 
 video#videoPlayer {
-    max-width: 100%;
+    max-width: 300PX;
+    max-height: 300PX;
 }
 
 .video_box {
@@ -126,7 +127,7 @@ video#videoPlayer {
     background: #598b9e;
     border-radius: 20px;
     max-width: 500px;
-    max-height: 500px;
+    max-height: 400px;
 }
 *{
     margin:0;
@@ -148,7 +149,7 @@ video#videoPlayer {
     <div class="thank_banner">
         <div class="thank">
             <h1>THANK YOU!</h1>
-            <div>
+            {{-- <div>
                 <span><i class="fa fa-check" style="font-size:36px"></i></span>
             </div>
             <div>
@@ -157,7 +158,20 @@ video#videoPlayer {
                     <source src="/videos/gallery/{{ $video->video_path }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+            </div> --}}
+
+            <div>
+                <span><i class="fa fa-check" style="font-size:36px"></i></span>
             </div>
+            <div class="video_box">
+                <h2 style="">Preview</h2>
+                <video id="videoPlayer" controls>
+                    {{-- <source src="{{asset('/videos/gallery/sample-5s.mp4')}}" type="video/mp4"> --}}
+                    <source src="/videos/gallery/{{ $video->outputvideo }}" type="video/mp4">
+            
+                  </video>
+            </div>
+
             <button class="download-button">Download</button>
         </div>
     </div>
