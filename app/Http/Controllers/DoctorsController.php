@@ -83,7 +83,11 @@ class DoctorsController extends Controller
         // $doctor->role = $request->input('role');
         $doctor->contacno = $request->input('contacno');
         $doctor->city = $request->input('city');
-        $doctor->speciality = $request->input('speciality');
+        // $doctor->speciality = $request->input('speciality');
+
+        if ($request->has('speciality')) {
+            $doctor->speciality = $request->input('speciality');
+        }
 
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->getClientOriginalName();
