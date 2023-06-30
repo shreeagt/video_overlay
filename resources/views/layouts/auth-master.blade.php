@@ -13,7 +13,7 @@
 <!-- Responsive stylesheet -->
 <link rel="stylesheet" href="{{asset('theme/css/responsive.css')}}">
 <!-- Title -->
-<title>Optidev</title>
+<title>Optidew</title>
 <!-- Favicon -->
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 <link href="/images/favicon.ico" sizes="128x128" rel="shortcut icon" />
@@ -25,14 +25,24 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
+<style>
+.ajanta_color {
+    /* color: #2e255a; */
+    font-weight: bolder;
+}
+</style>
 <body class="text-center">
-    
+    <div>
     <main class="form-signin">
 
         @yield('content')
         
+
     </main>
-    
+    <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
+    </p>
+</div>
 <!-- Wrapper End -->
 <script src="{{asset('theme/js/jquery-3.6.0.js')}}"></script>
 <script src="{{asset('theme/js/jquery-migrate-3.0.0.min.js')}}"></script>

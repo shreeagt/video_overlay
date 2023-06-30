@@ -7,8 +7,9 @@ body {
     justify-content: center;
     align-items: center;
         /* background-color: rgb(0, 0, 0); */
+        color: #522a6e!important;
         position: relative;
-    background-image: url('/assets/images/login_banner.jpg');
+    background-image: url('/assets/images/login_banner.png');
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
@@ -17,15 +18,20 @@ body {
     display: flex;
     align-items: center;
     z-index: 0;
+    padding: 10PX;
 }
 
+.text-muted {
+    --bs-text-opacity: 1;
+    color: #522a6e!important;
+}
 .logo img {
     max-width: 150px;
 }
 
 .logo{
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
 }
 
@@ -44,14 +50,25 @@ body {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 1.2);
     padding: 20px;
     border-radius:20px;
+    max-width:600px;
+    margin: auto;
+    /* margin: auto 20px; */
     /* background: #71bbd9; */
+}
+
+p.empower-text {
+    font-size: 30px;
+    color: aliceblue;
 }
 
 @media screen and (max-width: 768px){
     body {
-    background-image: url('/assets/images/login_mob.jpg');
+    background-image: url('/assets/images/login_mob.png');
 }
 
+p.empower-text {
+    font-size: 14PX;
+}
 }
 
 
@@ -71,11 +88,11 @@ body {
 @section('content')
 
 <a href="/" class="logo">
-    <img src="{{asset('Optidewlogo.png')}}">
+    <img src="{{asset('lynx-logo.png')}}">
   </a>
 
 <a href="/" class="logo logo_position">
-    <img src="{{asset('assets/images/ajanta-logo.png')}}">
+    <img src="{{asset('assets/images/ajantaone-logo.png')}}">
   </a>
 
     <form method="post" action="{{ route('login.perform') }}">
@@ -112,4 +129,6 @@ body {
         
         @include('auth.partials.copy')
     </form>
+
+
 @endsection
