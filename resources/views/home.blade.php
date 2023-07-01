@@ -76,6 +76,16 @@
   border-radius: 1em;
 }
 
+video#myVideo {
+   position: fixed;
+       top: 0;
+       left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
+
+
 @keyframes loading-animation {
   0% {
     left: -50%;
@@ -92,19 +102,31 @@
             <div class="loading__bar"></div>
          </div>
       </div>
+
+      <video id="myVideo"   autoplay loop muted>
+         <source src="{{asset('assets/images/desk_banner.mp4')}}" class="d-none d-md-block" type="video/mp4">
+         <source src="{{asset('assets/images/mob_banner.mp4')}}" class="d-block d-md-none" type="video/mp4">
+       </video>
+
+      {{-- <video src="{{asset('assets/images/desk_banner.mp4')}}" id="video_bg" autoplay></video> --}}
       <div class="banner-wrapper pt-md-0 pt-5">
-         <img src="{{asset('assets/images/agantaone-logo.png')}}" alt="logo" class="logo logoposition">
+       <a href="#" class="logo ">
+            <img src="{{asset('lynx-logo.png')}}" >
+         </a>
+         <a href="#" class="logo logoposition">
+         <img src="{{asset('assets/images/ajantaone-logo.png')}}" alt="logo" >
+         </a>
          {{-- <img src="{{asset('Optidewlogo.png')}}" alt="logo" class="logo logoposition"> --}}
          <div class="container">
             <div class="row justify-content-center align-items-center">
-               <div class="col-lg-6">
+               {{-- <div class="col-lg-6">
                   <div class="img-shree-cover">
-                     {{-- <img src="{{asset('assets/images/home/doc.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs"> --}}
+                    
                      <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs">
-                     {{-- <h2 class="redley-text">An initiative by</h2> --}}
+               
                      <h2 class="redley-text"></h2>
                   </div>
-               </div>
+               </div> --}}
                <div class="col-lg-6">
                   <div class="col-lg-12">
                      <div class="banner_text ">
@@ -130,99 +152,6 @@
             </div>
          </div>
  
-      {{-- </div> --}}
-      {{-- <div class="timeline-cover pt-4">
-         <div class="text-center">
-            <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo">
-            <h1>ENHANCE YOUR DIGITAL PRESENCE<br>WITH<br>AJANTA PHARMA LIMITED!</h1>
-         </div>
-         <div class="timeline mt-5">
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/2.png')}}" alt="Image 1">
-               </div>
-               <div class="timeline__content">
-                  <h3>1.Amplify Your
-                     Online Influence
-                  </h3>
-                  <p>Our Social Media Manager will skyrocket
-                     your online presence, positioning you as
-                     the go-to eye specialist in your area.
-                  </p>
-               </div>
-            </div>
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/3.png')}}" alt="Image 2">
-               </div>
-               <div class="timeline__content">
-                  <h3>2.Expand Your
-                     Patient Network
-                  </h3>
-                  <p>Tap into a vast pool of potential patients through
-                     targeted social media strategies, allowing you to
-                     grow your practice and increase appointments
-                  </p>
-               </div>
-            </div>
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/4.png')}}" alt="Image 3">
-               </div>
-               <div class="timeline__content">
-                  <h3>3.Engage and
-                     Educate
-                  </h3>
-                  <p>Our expert will captivate your audience with
-                     compelling content, delivering valuable eye care
-                     information that establishes you as a trusted authority.
-                  </p>
-               </div>
-            </div>
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/5.png')}}" alt="Image 4">
-               </div>
-               <div class="timeline__content">
-                  <h3>4.Time-Efficient
-                     Solution
-                  </h3>
-                  <p>Let our Social Media Manager handle the complexities
-                     of social media, freeing up your valuable time to focus
-                     on delivering exceptional patient care.
-                  </p>
-               </div>
-            </div>
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/6.png')}}" alt="Image 5">
-               </div>
-               <div class="timeline__content">
-                  <h3>5.Ignite Patient
-                     Loyalty
-                  </h3>
-                  <p>Let our Social Media Manager handle the complexities
-                     of social media, freeing up your valuable time to focus
-                     on delivering exceptional patient care.
-                  </p>
-               </div>
-            </div>
-            <div class="timeline__item">
-               <div class="timeline__image">
-                  <img src="{{asset('assets/images/home/7.png')}}" alt="Image 6">
-               </div>
-               <div class="timeline__content">
-                  <h3>6.Stay Ahead of
-                     Competitors
-                  </h3>
-                  <p>With our cutting-edge social media strategies, you'll outshine
-                     your competition, staying at the forefront of the ever-evolving
-                     digital landscape.
-                  </p>
-               </div>
-            </div>
-         </div>
-      </div> --}}
       <script>
          document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
            const dropZoneElement = inputElement.closest(".drop-zone");
@@ -298,7 +227,7 @@
    document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('form');
       const loaderCover = document.getElementById('loader_cover');
-
+      const videobg = document.getElementById('myVideo');
       form.addEventListener('submit', (event) => {
          event.preventDefault(); // Prevent the default form submission
 
@@ -330,7 +259,7 @@
 
          // Show the loader
          loaderCover.classList.remove('d-none');
-
+         videobg.classList.add('d-none')
          // Submit the form
          form.submit();
       });
@@ -339,27 +268,6 @@
 
 {{-- <h2 class="redley-text"></h2> --}}
 
-<script>
-  // Get the target element
-  const element = document.querySelector('.redley-text');
-  // Define the text to be displayed
-  const text = 'An initiative by';
-  let index = 0;
-
-  // Function to update the text content
-  function updateText() {
-    element.textContent = text.slice(0, index);
-
-    // Increment the index until the whole text is displayed
-    if (index < text.length) {
-      index++;
-      setTimeout(updateText, 100); // Delay between each letter (in milliseconds)
-    }
-  }
-
-  // Call the function to start displaying the text
-  updateText();
-</script>
 
    </body>
 </html>

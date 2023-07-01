@@ -73,7 +73,7 @@ p.empower-text {
 
 @media screen and (max-width: 768px){
     body {
-    background-image: url('/assets/images/login_mob.png');
+    background-image: url('/assets/images/login_mob.jpeg');
 }
 
 p.empower-text {
