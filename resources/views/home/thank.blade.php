@@ -67,7 +67,8 @@
     align-items: center;
         /* background-color: rgb(0, 0, 0); */
         position: relative;
-    background-image: url('/assets/images/thank_you.jpg');
+    /* background-image: url('/assets/images/thank_you.jpg'); */
+    background-image: url('/assets/images/login_banner.jpeg');
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
@@ -136,14 +137,16 @@ video#videoPlayer {
 
 @media screen and (max-width: 768px){
     .thank_banner {
-    background-image: url('/assets/images/thank_mob.png');
+    /* background-image: url('/assets/images/thank_mob.png'); */
+    background-image: url('/assets/images/login_mob.png');
 }
 }
 </style>
 <body>
 
     <a href="/" class="logo">
-        <img src="{{asset('Optidewlogo.png')}}">
+        {{-- <img src="{{asset('Optidewlogo.png')}}"> --}}
+        <img src="{{asset('assets/images/ajantaone-logo.png')}}">
       </a>
 
     <div class="thank_banner">

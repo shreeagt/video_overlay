@@ -9,7 +9,7 @@ body {
         /* background-color: rgb(0, 0, 0); */
         color: #522a6e!important;
         position: relative;
-    background-image: url('/assets/images/login_banner.png');
+    background-image: url('/assets/images/login_banner.jpeg');
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: center;
@@ -23,6 +23,11 @@ body {
 
 .text-muted {
     --bs-text-opacity: 1;
+    color: #2f255a!important;
+}
+
+.text-muted {
+  
     color: #522a6e!important;
 }
 .logo img {
@@ -44,16 +49,21 @@ body {
 } */
 
     main.form-signin {
-    min-width: 500px;
+    min-width: 400px;
     align-items: center;
     background: rgba(255,255,255,0.3);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 1.2);
     padding: 20px;
     border-radius:20px;
-    max-width:600px;
+    max-width:500px;
     margin: auto;
     /* margin: auto 20px; */
     /* background: #71bbd9; */
+}
+
+.text-muted {
+    /* --bs-text-opacity: 1; */
+    color: #613665!important;
 }
 
 p.empower-text {
@@ -125,7 +135,7 @@ p.empower-text {
             <input type="checkbox" name="remember" value="1">
         </div>
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        <button class="w-100 btn btn-lg btn-primary" style="max-width:200px" type="submit">Login</button>
         
         @include('auth.partials.copy')
     </form>

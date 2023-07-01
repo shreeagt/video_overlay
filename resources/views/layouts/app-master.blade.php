@@ -43,7 +43,8 @@
             <div class="dashboard_header_logo">
               <a href="/" class="logo">
                 {{-- <span class="text-thm">.</span> --}}
-              <img src={{asset('Optidewlogo.png')}}>
+              {{-- <img src={{asset('Optidewlogo.png')}}> --}}
+              <img src={{asset('assets/images/ajantaone-logo.png')}}>
             </a>
             </div>
           </div>

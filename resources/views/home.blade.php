@@ -33,11 +33,68 @@
       font-size:18px;
       } */
 
+   body{
+      overflow: hidden;
+   }
+
+.loader_cover {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loading {
+  text-align: center;
+  width: min-content;
+
+}
+
+.loading__text {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.loading__bar {
+  position: relative;
+  height: 5px;
+  width: 12rem;
+  background-color: darkgray;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.loading__bar::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff5, rgba(230, 230, 230, 0.891));
+  animation: loading-animation 1.3s infinite;
+  border-radius: 1em;
+}
+
+@keyframes loading-animation {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
    </style>
-   <body>
+   <body> 
+      <div class="loader_cover d-none" id="loader_cover">
+         <div class="loading">
+            <p class="loading__text">Processing...</p>
+            <div class="loading__bar"></div>
+         </div>
+      </div>
       <div class="banner-wrapper pt-md-0 pt-5">
-         {{-- <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo logoposition"> --}}
-         <img src="{{asset('Optidewlogo.png')}}" alt="logo" class="logo logoposition">
+         <img src="{{asset('assets/images/agantaone-logo.png')}}" alt="logo" class="logo logoposition">
+         {{-- <img src="{{asset('Optidewlogo.png')}}" alt="logo" class="logo logoposition"> --}}
          <div class="container">
             <div class="row justify-content-center align-items-center">
                <div class="col-lg-6">
@@ -72,7 +129,8 @@
                </div>
             </div>
          </div>
-      </div>
+ 
+      {{-- </div> --}}
       {{-- <div class="timeline-cover pt-4">
          <div class="text-center">
             <img src="{{asset('assets/images/ajanta-logo.png')}}" alt="logo" class="logo">
@@ -234,45 +292,50 @@
          }
                
       </script>
-      <script>
-         function validateForm(event) {
-           event.preventDefault(); // Prevent the default form submission
-         
-           const fileInput = document.querySelector('.drop-zone__input');
-           const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
-           const maxSizeInBytes = 10 * 1024 * 1024; // 2MB
-         
-           const file = fileInput.files[0];
-         
-           // Check if a file is selected
-           if (!file) {
-             alert('Please select a file.');
-             return false;
-           }
-         
-           // Check the file extension
-           const fileName = file.name;
-           const fileExtension = fileName.split('.').pop().toLowerCase();
-           if (!allowedExtensions.includes(fileExtension)) {
-             alert('Please select a valid video file.');
-             return false;
-           }
-         
-           // Check the file size
-           if (file.size > maxSizeInBytes) {
-             alert('File size exceeds the limit of 2MB.');
-             return false;
-           }
-         
-           // Form is valid, submit it
-           event.target.submit();
-         }
-         
-         const form = document.querySelector('form');
-         form.addEventListener('submit', validateForm);
+ 
 
-         
-      </script>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('form');
+      const loaderCover = document.getElementById('loader_cover');
+
+      form.addEventListener('submit', (event) => {
+         event.preventDefault(); // Prevent the default form submission
+
+         const fileInput = document.querySelector('.drop-zone__input');
+         const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
+         const maxSizeInBytes = 10 * 1024 * 1024; // 10MB
+
+         const file = fileInput.files[0];
+
+         // Check if a file is selected
+         if (!file) {
+            alert('Please select a file.');
+            return;
+         }
+
+         // Check the file extension
+         const fileName = file.name;
+         const fileExtension = fileName.split('.').pop().toLowerCase();
+         if (!allowedExtensions.includes(fileExtension)) {
+            alert('Please select a valid video file.');
+            return;
+         }
+
+         // Check the file size
+         if (file.size > maxSizeInBytes) {
+            alert('File size exceeds the limit of 10MB.');
+            return;
+         }
+
+         // Show the loader
+         loaderCover.classList.remove('d-none');
+
+         // Submit the form
+         form.submit();
+      });
+   });
+</script>
 
 {{-- <h2 class="redley-text"></h2> --}}
 
