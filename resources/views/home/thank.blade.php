@@ -117,8 +117,9 @@
     z-index: 4;
 }
 
-.logo_location{
+.logo_location {
     right: 10px;
+    left: auto;
 }
 
 
