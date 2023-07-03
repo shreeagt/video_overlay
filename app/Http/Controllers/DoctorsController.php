@@ -23,6 +23,11 @@ class DoctorsController extends Controller
         mkdir($folderPath, 0777, true);
     }
 
+    $FolderPath = public_path('photos');
+    if (!file_exists($FolderPath)) {
+        mkdir($FolderPath, 0777, true);
+    }
+
     $idoctor = new Doctors;
     $idoctor->firstname = $request->input('firstname');
     $idoctor->lastname = $request->input('lastname');
@@ -30,6 +35,17 @@ class DoctorsController extends Controller
     $idoctor->contacno = $request->input('contacno');
     $idoctor->city = $request->input('city');
     $idoctor->speciality = $request->input('speciality');
+    $idoctor->mci = $request->input('mci');
+
+    if ($request->hasFile('photo')) {
+        $photo = $request->file('photo');
+        $photoPath = $photo->getClientOriginalExtension();
+        $photoName = uniqid().'.'.$photoPath;
+        $photo->move($FolderPath, $photoName);
+        
+        // Save the file path or URL to your model or database if needed
+        $idoctor->photo = $photoName;
+    }
 
     if ($request->hasFile('logo')) {
         $logo = $request->file('logo');
@@ -76,6 +92,11 @@ class DoctorsController extends Controller
         if (!file_exists($folderPath)) {
             mkdir($folderPath, 0777, true);
         }
+
+        $FolderPath = public_path('photos');
+        if (!file_exists($FolderPath)) {
+            mkdir($FolderPath, 0777, true);
+        }
         // Update the doctor's details based on the form input
         $doctor->firstname = $request->input('firstname');
         $doctor->lastname = $request->input('lastname');
@@ -84,15 +105,31 @@ class DoctorsController extends Controller
         $doctor->contacno = $request->input('contacno');
         $doctor->city = $request->input('city');
         // $doctor->speciality = $request->input('speciality');
+        $doctor->mci = $request->input('mci');
+
 
         if ($request->has('speciality')) {
             $doctor->speciality = $request->input('speciality');
         }
 
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoPath = $photo->getClientOriginalExtension();
+            $photoName = uniqid().'.'.$photoPath;
+            $photo->move($FolderPath, $photoName);
+            
+            // Save the file path or URL to your model or database if needed
+            $doctor->photo = $photoName;
+        }
+    
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->getClientOriginalName();
-            $request->file('logo')->move($folderPath, $logoPath);
-            $doctor->logo = $logoPath;
+            $logo = $request->file('logo');
+            $logoPath = $logo->getClientOriginalExtension();
+            $logoName = uniqid().'.'.$logoPath;
+            $logo->move($folderPath, $logoName);
+            
+            // Save the file path or URL to your model or database if needed
+            $doctor->logo = $logoName;
         }
     // Retrieve the soid from the users table and assign it to the soid column of the Doctors model
     $soid = Auth::id();
