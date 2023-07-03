@@ -206,6 +206,12 @@
      /* .banner-wrapper{
         height:auto;
      } */
+
+     .logo {
+
+      max-width: 90px;
+
+  }
   
      .timeline-cover h1 {
       font-size: 18px;

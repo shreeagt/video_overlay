@@ -40,7 +40,9 @@
         
 
     </main>
-    <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
+    {{-- <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
+    </p> --}}
+    <p class="empower-text">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" style="max-width: 150px" alt="ajanta"></span> makers of <img src="{{asset('/Optidewlogo.png')}}" style="max-width: 150px" alt="ajanta">"
     </p>
 </div>
 <!-- Wrapper End -->

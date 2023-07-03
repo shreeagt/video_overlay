@@ -66,6 +66,11 @@ body {
     color: #613665!important;
 }
 
+.opti-logo{
+    left:10px;
+    top:10px;
+    right: auto;
+}
 p.empower-text {
     font-size: 30px;
     color: aliceblue;
@@ -86,6 +91,10 @@ p.empower-text {
      main.form-signin {
     min-width: 300px;
 }
+
+.logo img {
+    max-width: 80px;
+}
 }
 
 @media screen and (max-width: 300px) {   
@@ -104,6 +113,10 @@ p.empower-text {
 <a href="/" class="logo logo_position">
     <img src="{{asset('assets/images/ajantaone-logo.png')}}">
   </a>
+
+  <a href="#" class="logo opti-logo">
+    <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+ </a>
 
     <form method="post" action="{{ route('login.perform') }}">
         
