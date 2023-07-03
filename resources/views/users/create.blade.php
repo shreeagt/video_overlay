@@ -24,12 +24,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="name" class="form-label">Lastname</label>
-                    <input value="{{ old('lastname') }}" 
-                        type="text" 
+                    {{-- <label for="name" class="form-label">Last name</label> --}}
+                    <input value="1" 
+                        type="hidden" 
                         class="form-control" 
                         name="lastname" 
-                        placeholder="Lastname" required>
+                        placeholder="last name" required>
                     @if ($errors->has('lastname'))
                         <span class="text-danger text-left">{{ $errors->first('lastname') }}</span>
                     @endif
