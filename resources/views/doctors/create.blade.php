@@ -103,7 +103,7 @@
                         type="text" 
                         class="form-control" 
                         name="city" 
-                        placeholder="Speciality" required>
+                        placeholder="City" required>
                     @if ($errors->has('city'))
                         <span class="text-danger text-left">{{ $errors->first('city') }}</span>
                     @endif
