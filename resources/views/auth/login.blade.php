@@ -73,7 +73,7 @@ p.empower-text {
 
 @media screen and (max-width: 768px){
     body {
-    background-image: url('/assets/images/login_mob.png');
+    background-image: url('/assets/images/login_mob.jpeg');
 }
 
 p.empower-text {
@@ -110,7 +110,7 @@ p.empower-text {
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         {{-- <img class="mb-4" src="{!! url('images/bootstrap-logo.svg') !!}" alt="" width="72" height="57"> --}}
         
-        <h1 class="h3 mb-3 fw-normal">Login</h1>
+        <h1 class="h3 mb-3 fw-normal" style="color:#fff">Login</h1>
 
         @include('layouts.partials.messages')
 
@@ -130,10 +130,10 @@ p.empower-text {
             @endif
         </div>
 
-        <div class="form-group mb-3">
+        {{-- <div class="form-group mb-3">
             <label for="remember">Remember me</label>
             <input type="checkbox" name="remember" value="1">
-        </div>
+        </div> --}}
 
         <button class="w-100 btn btn-lg btn-primary" style="max-width:200px" type="submit">Login</button>
         

@@ -112,9 +112,14 @@
 
 .logo{
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 10px;
     z-index: 4;
+}
+
+.logo_location {
+    right: 10px;
+    left: auto;
 }
 
 
@@ -138,7 +143,7 @@ video#videoPlayer {
 @media screen and (max-width: 768px){
     .thank_banner {
     /* background-image: url('/assets/images/thank_mob.png'); */
-    background-image: url('/assets/images/login_mob.png');
+    background-image: url('/assets/images/login_mob.jpeg');
 }
 }
 </style>
@@ -147,6 +152,11 @@ video#videoPlayer {
     <a href="/" class="logo">
         {{-- <img src="{{asset('Optidewlogo.png')}}"> --}}
         <img src="{{asset('assets/images/ajantaone-logo.png')}}">
+      </a>
+
+    <a href="/" class="logo logo_location">
+        {{-- <img src="{{asset('Optidewlogo.png')}}"> --}}
+        <img src="{{asset('lynx-logo.png')}}">
       </a>
 
     <div class="thank_banner">
