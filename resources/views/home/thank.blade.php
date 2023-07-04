@@ -132,8 +132,13 @@ video#videoPlayer {
     padding: 10px;
     background: #598b9e;
     border-radius: 20px;
-    max-width: 500px;
-    max-height: 400px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.ajanta_cover{
+    max-width:150px;
+    vertical-align: middle;
 }
 *{
     margin:0;
@@ -143,6 +148,7 @@ video#videoPlayer {
 p.empower-text {
     font-size: 30px;
     color: aliceblue;
+    text-align: center;
 }
 
 .opti-logo{
@@ -150,7 +156,45 @@ p.empower-text {
    left:10px;
 }
 
+@media screen and (max-width:1024px){
+    p.empower-text {
+    font-size: 18px;
+}
+}
 @media screen and (max-width: 768px){
+    .ajanta_cover{
+    max-width:100px;
+}
+
+span.br {
+    display: block;
+}
+
+.thank_banner {
+    width: auto;
+    padding: 10px;
+}
+
+.thank span {
+    display: inline-block;
+    padding: 14px;
+    margin: 15px;
+}
+
+.thank {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.thank h1 {
+    font-size: 20px;
+    color: #75bdd9;
+}
+
+.logo img {
+    max-width: 80px;
+}
 
 p.empower-text {
     font-size: 14PX;
@@ -209,7 +253,7 @@ p.empower-text {
 
             <button class="download-button">Download</button>
         </div>
-        <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" style="max-width: 150px" alt="ajanta"></span> makers of <img src="{{asset('/Optidewlogo.png')}}" style="max-width: 150px" alt="ajanta">"
+        <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
         </p>
     </div>
     </div>

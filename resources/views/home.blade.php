@@ -170,7 +170,7 @@ p.empower-text {
                      </div>
                
                   </div>
-                  <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" style="max-width: 150px" alt="ajanta"></span> makers of <img src="{{asset('/Optidewlogo.png')}}" style="max-width: 150px" alt="ajanta">"
+                  <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
                   </p>
                </div>
             </div>

@@ -11262,6 +11262,15 @@ span.active_status.active{
   background-color: #1981b3;
   color: #041E42;
 }
+
+a.logo img {
+  max-width: 150px;
+}
+
+img.ajanta_cover {
+  max-width: 150px;
+}
+
 .dashboard.dsh_board_sidebar_hidden .dashboard__sidebar {
   transform: translateX(-100%);
 }
