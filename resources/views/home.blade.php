@@ -85,6 +85,23 @@ video#myVideo {
       object-fit: cover;
 }
 
+p.empower-text {
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.opti-logo{
+   top:10px;
+   left:10px;
+}
+
+@media screen and (max-width: 768px){
+
+p.empower-text {
+    font-size: 14PX;
+}
+}
+
 
 @keyframes loading-animation {
   0% {
@@ -113,6 +130,9 @@ video#myVideo {
        <a href="#" class="logo ">
             <img src="{{asset('lynx-logo.png')}}" >
          </a>
+       <a href="#" class="logo opti-logo">
+            <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+         </a>
          <a href="#" class="logo logoposition">
          <img src="{{asset('assets/images/ajantaone-logo.png')}}" alt="logo" >
          </a>
@@ -130,7 +150,7 @@ video#myVideo {
                <div class="col-lg-6">
                   <div class="col-lg-12">
                      <div class="banner_text ">
-                        <h1> Hello  Dr.<span style="color:brown">{{ $doctor->firstname }} </span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
+                        <h1> Hello,  <span style="color:#fff">Dr. {{ $doctor->firstname }} </span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
                         <form action="{{ route('doctors.upload') }}" method="post" enctype="multipart/form-data">
                            <div class="mt-2">
                               @include('layouts.partials.messages')
@@ -145,9 +165,13 @@ video#myVideo {
                     
                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
                         </form>
+              
                        </div>
                      </div>
+               
                   </div>
+                  <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
+                  </p>
                </div>
             </div>
          </div>

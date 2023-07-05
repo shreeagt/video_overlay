@@ -555,6 +555,18 @@
 	.banner_one.home7_banr_slider{margin-bottom: 80px;}
 }
 @media only screen and (max-width:768px){
+	img.ajanta_cover {
+		max-width: 100px;
+	  }
+
+	  span.br {
+		display: block;
+	}
+
+	.dashboard__sidebar {
+		margin-top: 100px;
+	}
+
 	.menu-toggle {background-color: transparent !important;}
 	.menu_style_home_one.stricky-fixed,
 	header.header-nav.menu_style_home_one{display: none;}
@@ -621,6 +633,8 @@
 /* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
 @media only screen and (max-width: 767.98px){
 	/* ExTra Class Start*/
+	a.logo img {max-width: 100px;}
+	.bg-light.p-4.rounded {overflow-x: auto;}
 	.dn-sm, .dn-767 {display: none !important;}
 	.db-sm, .db-767 {display: block !important;}
 	.bgct-767{background-color: transparent !important;}
@@ -813,7 +827,7 @@
 	.mega_dropdown_content_closer h5{margin-top: 5px;}
 	.shop_single_natabmenu .product_popup{right: 0;}
 	.custom_nav_list{position: absolute;bottom: -20px;}
-	.dashboard__sidebar {margin-top: 120px;}
+	.dashboard__sidebar {margin-top: 100px;}
 
 }
 /* (min-width:361px) (max-width:520px) */

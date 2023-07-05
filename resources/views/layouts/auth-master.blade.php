@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="auto parts, baby store, ecommerce, electronics, fashion, food, marketplace, modern, multi vendor, multipurpose, organic, responsive, shop, shopping, store">
-<meta name="description" content="Qrcode Scanner">
+<meta name="keywords" content="Optidew">
+<meta name="description" content="Optidew">
 <meta name="CreativeLayers" content="ATFN">
 <!-- css file -->
 <link rel="stylesheet" href="{{asset('theme/css/bootstrap.min.css')}}">
@@ -31,6 +31,8 @@
     /* color: #2e255a; */
     font-weight: bolder;
 }
+
+
 </style>
 <body class="text-center">
     <div>
@@ -40,7 +42,9 @@
         
 
     </main>
-    <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
+    {{-- <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
+    </p> --}}
+    <p class="empower-text">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" style="max-width: 150px" alt="ajanta">"</span>
     </p>
 </div>
 <!-- Wrapper End -->

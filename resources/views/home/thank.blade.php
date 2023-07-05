@@ -124,20 +124,81 @@
 
 
 video#videoPlayer {
-    max-width: 300PX;
-    max-height: 300PX;
+    max-width: 200PX;
+    max-height: 200PX;
 }
 
 .video_box {
     padding: 10px;
     background: #598b9e;
     border-radius: 20px;
-    max-width: 500px;
-    max-height: 400px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.ajanta_cover{
+    max-width:150px;
+    vertical-align: middle;
 }
 *{
     margin:0;
     padding:0;
+}
+
+p.empower-text {
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.opti-logo{
+   top:10px;
+   left:10px;
+}
+
+@media screen and (max-width:1024px){
+    p.empower-text {
+    font-size: 18px;
+}
+}
+@media screen and (max-width: 768px){
+    .ajanta_cover{
+    max-width:100px;
+}
+
+span.br {
+    display: block;
+}
+
+.thank_banner {
+    width: auto;
+    padding: 10px;
+}
+
+.thank span {
+    display: inline-block;
+    padding: 14px;
+    margin: 15px;
+}
+
+.thank {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.thank h1 {
+    font-size: 20px;
+    color: #75bdd9;
+}
+
+.logo img {
+    max-width: 80px;
+}
+
+p.empower-text {
+    font-size: 14PX;
+}
 }
 
 @media screen and (max-width: 768px){
@@ -154,13 +215,18 @@ video#videoPlayer {
         <img src="{{asset('assets/images/ajantaone-logo.png')}}">
       </a>
 
+      <a href="#" class="logo opti-logo">
+        <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+     </a>
+     
     <a href="/" class="logo logo_location">
         {{-- <img src="{{asset('Optidewlogo.png')}}"> --}}
         <img src="{{asset('lynx-logo.png')}}">
       </a>
 
     <div class="thank_banner">
-        <div class="thank">
+        <div class="text-center" >
+        <div class="thank" style="text-align: center;margin:auto;">
             <h1>THANK YOU!</h1>
             {{-- <div>
                 <span><i class="fa fa-check" style="font-size:36px"></i></span>
@@ -176,7 +242,7 @@ video#videoPlayer {
             <div>
                 <span><i class="fa fa-check" style="font-size:36px"></i></span>
             </div>
-            <div class="video_box">
+            <div class="video_box" style="text-align: center;margin:auto;">
                 <h2 style="">Preview</h2>
                 <video id="videoPlayer" controls>
                     {{-- <source src="{{asset('/videos/gallery/sample-5s.mp4')}}" type="video/mp4"> --}}
@@ -187,6 +253,9 @@ video#videoPlayer {
 
             <button class="download-button">Download</button>
         </div>
+        <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
+        </p>
+    </div>
     </div>
 
     <script>
