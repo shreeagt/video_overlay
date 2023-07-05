@@ -37,7 +37,7 @@
 
                 <div class="mb-3">
                     {{-- <label for="name" class="form-label">Password</label> --}}
-                    <input value="bidinls" 
+                    <input value="optidew" 
                         type="hidden" 
                         class="form-control" 
                         name="password" 
