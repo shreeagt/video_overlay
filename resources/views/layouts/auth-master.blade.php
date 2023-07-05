@@ -44,7 +44,7 @@
     </main>
     {{-- <p class="empower-text">"An educational initiative by the <span class="ajanta_color">Ajanta Pharma</span> makers of OptiDew"
     </p> --}}
-    <p class="empower-text">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" style="max-width: 150px" alt="ajanta">"</span>
+    <p class="empower-text">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
     </p>
 </div>
 <!-- Wrapper End -->

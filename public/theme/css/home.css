@@ -30,12 +30,14 @@
   .logo{
     position: absolute;
      max-width:150px;
-     bottom: 10px;
+     top: 10px;
      right:10px;
   }
 
   .logoposition{
-     left:10px;
+     right:10px;
+     top:unset;
+     bottom:10px;
   }
 
 

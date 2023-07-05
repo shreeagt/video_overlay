@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="">
-      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="author" content="">
       <meta name="generator" content="Hugo 0.87.0">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <!-- CSRF Token -->
@@ -46,13 +46,13 @@
 
 .loading {
   text-align: center;
-  width: min-content;
+  /* width: min-content; */
 
 }
 
 .loading__text {
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .loading__bar {
@@ -62,6 +62,7 @@
   background-color: darkgray;
   border-radius: 1em;
   overflow: hidden;
+  margin:auto;
 }
 
 .loading__bar::after {
@@ -86,7 +87,7 @@ video#myVideo {
 }
 
 p.empower-text {
-    font-size: 30px;
+    font-size: 20px;
     color: aliceblue;
 }
 
@@ -114,9 +115,13 @@ p.empower-text {
    </style>
    <body> 
       <div class="loader_cover d-none" id="loader_cover">
+         <a href="#" class="logo opti-logo">
+            <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+         </a>
          <div class="loading">
             <p class="loading__text">Processing...</p>
             <div class="loading__bar"></div>
+            <p class="loading__text">While we are processing, keep blinking your Eyes</p>
          </div>
       </div>
 
@@ -127,30 +132,23 @@ p.empower-text {
 
       {{-- <video src="{{asset('assets/images/desk_banner.mp4')}}" id="video_bg" autoplay></video> --}}
       <div class="banner-wrapper pt-md-0 pt-5">
-       <a href="#" class="logo ">
+         <a href="#" class="logo logoposition">
+    
             <img src="{{asset('lynx-logo.png')}}" >
          </a>
        <a href="#" class="logo opti-logo">
             <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
          </a>
-         <a href="#" class="logo logoposition">
+         <a href="#" class="logo ">
          <img src="{{asset('assets/images/ajantaone-logo.png')}}" alt="logo" >
          </a>
-         {{-- <img src="{{asset('Optidewlogo.png')}}" alt="logo" class="logo logoposition"> --}}
+
          <div class="container">
             <div class="row justify-content-center align-items-center">
-               {{-- <div class="col-lg-6">
-                  <div class="img-shree-cover">
-                    
-                     <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" style="-webkit-animation: bounceHero 5s ease-in-out infinite;" class="img-fluid" alt="docs">
-               
-                     <h2 class="redley-text"></h2>
-                  </div>
-               </div> --}}
                <div class="col-lg-6">
                   <div class="col-lg-12">
                      <div class="banner_text ">
-                        <h1> Hello,  <span style="color:#fff">Dr. {{ $doctor->firstname }} </span><br>Please Upload your video<span class="red" style="color:red">.</span> </h1>
+                        <h1> Hello,  <span style="color:#fff">Dr. {{ $doctor->firstname }} </span><br>Please Upload your video. </h1>
                         <form action="{{ route('doctors.upload') }}" method="post" enctype="multipart/form-data">
                            <div class="mt-2">
                               @include('layouts.partials.messages')
@@ -231,7 +229,7 @@ p.empower-text {
          
            thumbnailElement.dataset.label = file.name;
          
-           // Show thumbnail for image files
+  
            if (file.type.startsWith("image/")) {
              const reader = new FileReader();
          

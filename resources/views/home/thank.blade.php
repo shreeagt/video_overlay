@@ -112,14 +112,16 @@
 
 .logo{
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    top: 10px;
+    right: 10px;
     z-index: 4;
 }
 
 .logo_location {
     right: 10px;
     left: auto;
+    top:unset;
+    bottom: 10px;
 }
 
 
@@ -146,7 +148,7 @@ video#videoPlayer {
 }
 
 p.empower-text {
-    font-size: 30px;
+    font-size: 20px;
     color: aliceblue;
     text-align: center;
 }

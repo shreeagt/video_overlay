@@ -41,8 +41,10 @@ body {
 }
 
 .logo_position {
-    right: unset;
-    left: 10px;
+    right: 10px;
+    left: unset;
+    top: 10px;
+    bottom:unset;
 }
 /* body.text-center {
     background: #71bbd9;
@@ -72,7 +74,7 @@ body {
     right: auto;
 }
 p.empower-text {
-    font-size: 30px;
+    font-size: 20px;
     color: aliceblue;
 }
 
