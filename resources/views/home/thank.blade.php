@@ -139,7 +139,7 @@ video#videoPlayer {
 }
 
 .ajanta_cover{
-    max-width:150px;
+    max-width:90px;
     vertical-align: middle;
 }
 *{
@@ -165,7 +165,7 @@ p.empower-text {
 }
 @media screen and (max-width: 768px){
     .ajanta_cover{
-    max-width:100px;
+    max-width:90px;
 }
 
 span.br {
