@@ -166,6 +166,8 @@ p.empower-text {
 @media screen and (max-width: 768px){
     .ajanta_cover{
     max-width:90px;
+    display: block;
+    margin: auto;
 }
 
 span.br {
