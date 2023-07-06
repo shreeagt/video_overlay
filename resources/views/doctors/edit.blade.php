@@ -35,6 +35,7 @@
                     <option value="Retina Specialist" {{ $doctor->speciality == 'Retina Specialist' ? 'selected' : '' }}>Retina Specialist</option>
                     <option value="Cornea Specialist" {{ $doctor->speciality == 'Cornea Specialist' ? 'selected' : '' }}>Cornea Specialist</option>
                     <option value="Glaucoma Specialist" {{ $doctor->speciality == 'Glaucoma Specialist' ? 'selected' : '' }}>Glaucoma Specialist</option>
+                    <option value="Optometrist" {{ $doctor->speciality == 'Optometrist' ? 'selected' : '' }}>Optometrist</option>
                 </select>
             </div>
             <div class="form-group">

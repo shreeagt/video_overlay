@@ -91,6 +91,8 @@
                         <option value="Retina Specialist" {{ old('speciality') == 'Retina Specialist' ? 'selected' : '' }}>Retina Specialist</option>
                         <option value="Cornea Specialist" {{ old('speciality') == 'Cornea Specialist' ? 'selected' : '' }}>Cornea Specialist</option>
                         <option value="Glaucoma Specialist" {{ old('speciality') == 'Glaucoma Specialist' ? 'selected' : '' }}>Glaucoma Specialist</option>
+                        <option value="Optometrist" {{ old('speciality') == 'Optometrist' ? 'selected' : '' }}>Optometrist</option>
+
                     </select>
                     @if ($errors->has('speciality'))
                         <span class="text-danger text-left">{{ $errors->first('speciality') }}</span>
