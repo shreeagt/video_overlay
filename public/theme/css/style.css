@@ -11212,7 +11212,7 @@ span.active_status.active{
   width: 300px;
 }
 .dashboard__main {
-  margin-top: 90px;
+  margin-top: 120px;
   padding-left: 300px;
   width: 100%;
 }
@@ -11264,11 +11264,16 @@ span.active_status.active{
 }
 
 a.logo img {
-  max-width: 150px;
+  max-width: 100px;
+}
+
+.optidew_logo{
+  display: block;
+  margin: auto;
 }
 
 img.ajanta_cover {
-  max-width: 90px;
+  max-width: 120px;
 }
 
 .dashboard.dsh_board_sidebar_hidden .dashboard__sidebar {
@@ -19260,4 +19265,9 @@ input.quantity-num[type="number"]::-webkit-outer-spin-button {
 }
 .zoomContainer{
   height: 200px !important;
+}
+
+
+span.br {
+  display: block;
 }

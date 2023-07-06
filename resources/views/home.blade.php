@@ -103,7 +103,16 @@ p.empower-text {
 }
 }
 
+a.logo.aj-logo {
+    left: unset;
+    right: unset;
+    bottom: 10px;
+    top: auto;
+}
 
+.loading_color{
+   color:#1a80b2;
+}
 @keyframes loading-animation {
   0% {
     left: -50%;
@@ -118,10 +127,12 @@ p.empower-text {
          <a href="#" class="logo opti-logo">
             <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
          </a>
+
+
          <div class="loading">
             <p class="loading__text">Processing...</p>
             <div class="loading__bar"></div>
-            <p class="loading__text">While we are processing, keep blinking your Eyes</p>
+            <p class="loading__text loading_color">While we are processing, keep blinking your Eyes</p>
          </div>
       </div>
 
@@ -139,6 +150,12 @@ p.empower-text {
        <a href="#" class="logo opti-logo">
             <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
          </a>
+
+         
+         <a href="#" class="logo aj-logo">
+            <img src="{{asset('assets/images/ajanta-light.png')}}" >
+        </a>
+
          <a href="#" class="logo ">
          <img src="{{asset('assets/images/ajantaone-logo.png')}}" alt="logo" >
          </a>
@@ -168,7 +185,7 @@ p.empower-text {
                      </div>
                
                   </div>
-                  <p class="empower-text text-center">"An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta-light.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/Optidewlogo.png')}}" class="ajanta_cover" alt="ajanta">"</span>
+                  <p class="empower-text text-center">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover " alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/optidew_logo.png')}}" class="ajanta_cover optidew_logo" alt="ajanta"></span>
                   </p>
                </div>
             </div>
@@ -255,7 +272,7 @@ p.empower-text {
 
          const fileInput = document.querySelector('.drop-zone__input');
          const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
-         const maxSizeInBytes = 10 * 1024 * 1024; // 10MB
+         const maxSizeInBytes = 20 * 1024 * 1024; // 10MB
 
          const file = fileInput.files[0];
 
@@ -275,7 +292,7 @@ p.empower-text {
 
          // Check the file size
          if (file.size > maxSizeInBytes) {
-            alert('File size exceeds the limit of 10MB.');
+            alert('File size exceeds the limit of 20MB.');
             return;
          }
 

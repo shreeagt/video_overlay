@@ -556,9 +556,8 @@
 }
 @media only screen and (max-width:768px){
 	img.ajanta_cover {
-		max-width: 90px;
-		display: block;
-		margin: auto;
+		max-width: 100px;
+
 	  }
 
 	  span.br {

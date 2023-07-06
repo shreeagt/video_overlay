@@ -78,6 +78,11 @@ p.empower-text {
     color: aliceblue;
 }
 
+a.logo.aj-logo {
+    left: 10px;
+    right: unset;
+}
+
 @media screen and (max-width: 768px){
     body {
     background-image: url('/assets/images/login_mob.jpeg');
@@ -119,6 +124,10 @@ p.empower-text {
   <a href="#" class="logo opti-logo">
     <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
  </a>
+ 
+<a href="#" class="logo aj-logo">
+    <img src="{{asset('assets/images/ajanta-light.png')}}" >
+</a>
 
     <form method="post" action="{{ route('login.perform') }}">
         
