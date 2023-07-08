@@ -262,7 +262,7 @@ a.logo.aj-logo {
       </script>
  
 
-<script>
+ <script>
    document.addEventListener('DOMContentLoaded', () => {
       const form = document.querySelector('form');
       const loaderCover = document.getElementById('loader_cover');
@@ -296,11 +296,32 @@ a.logo.aj-logo {
             return;
          }
 
-         // Show the loader
-         loaderCover.classList.remove('d-none');
-         videobg.classList.add('d-none')
-         // Submit the form
-         form.submit();
+         // Create a temporary video element to load the selected video
+         const videoElement = document.createElement('video');
+         videoElement.addEventListener('loadedmetadata', () => {
+            const targetWidth = 16;
+            const targetHeight = 9;
+            const videoWidth = videoElement.videoWidth;
+            const videoHeight = videoElement.videoHeight;
+
+            const ratio = videoWidth / videoHeight;
+            const expectedRatio = targetWidth / targetHeight;
+
+            if (Math.abs(ratio - expectedRatio) > 0.01) {
+               alert('The video must have a size ratio of 16:9.');
+               return;
+            }
+
+            // Show the loader
+            loaderCover.classList.remove('d-none');
+            videobg.classList.add('d-none');
+
+            // Submit the form
+            form.submit();
+         });
+
+         // Set the video source to the selected file
+         videoElement.src = URL.createObjectURL(file);
       });
    });
 </script>
