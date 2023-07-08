@@ -115,12 +115,19 @@ video#video-player {
 .thank span {
     display: inline-block;
     padding: 20px;
-    background: #ffc107;
+    background: #1a81b0;
     color: black;
-    border-radius: 50%;
+    border-radius: 20px;
+    color: aliceblue;
     margin: 20px;
 }
 
+span input {
+    border: 1px solid #EAEAEA;
+    border-radius: 6px;
+    height: 55px;
+    font-weight: 800;
+}
 .preview{
     background: #ffc107;
 }
@@ -289,11 +296,11 @@ p.empower-text {
             </span>
             </div>
         
-            <div>
+            {{-- <div>
               <button id="play-btn">Play Trimmed Video</button>
             </div>
             
-            <div id="preview-container"></div>
+            <div id="preview-container"></div> --}}
             
           </div>
 
