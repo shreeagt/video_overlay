@@ -151,6 +151,7 @@ class DoctorsController extends Controller
         'video_path' => 'required|mimetypes:video/mp4,video/avi,video/quicktime|max:5242880', // Maximum file size is 5MB
     ]);
 
+
     // Create the videos/gallery folder if it doesn't exist
     $folderPath = public_path('videos/gallery');
     if (!file_exists($folderPath)) {
@@ -173,7 +174,19 @@ class DoctorsController extends Controller
     $video->save();
 
     // Redirect to another page with the doctor's details
-    header("Location: /script_optidew.php?video_id=".$video->id);
-    die();
+    // header("Location: /script_optidew.php?video_id=".$video->id);
+    // die();
+
+    return redirect('/video/'.$video->id)->header('refresh', '5');
+
 }
+    public function showvideo($id)
+    {
+        // Retrieve the video details from the database based on the $video_id
+        $video = Videos::findOrFail($id);
+    
+        // Pass the video details to the view
+        return view('show_video', compact('video'));
+    }
+    
 }
