@@ -272,44 +272,39 @@ p.empower-text {
         <img src="{{asset('lynx-logo.png')}}">
       </a>
 
-    <a href="#" class="logo aj-logo">
+    <a href="{{ route('trimvideo', ['id' => $video->id]) }}" class="logo aj-logo">
         <img src="{{asset('assets/images/ajanta-light.png')}}" >
     </a>
 
     <div class="thank_banner">
-        <div class="text-center" >
+      <div class="text-center">
+      <form method="post" action="{{ route('trimvideo', ['id' => $video->id]) }}">
+        @csrf
         <div class="thank" style="text-align: center;margin:auto;">
-            <video id="video-player"  controls>
-              <source src="{{ asset('videos/gallery/'.$video->video_path) }}" type="video/mp4">
-            </video>
-            <div class="trim-slider-container">
-              <div id="trim-slider"></div>
-            </div>
-            <div class="un-timer">
-              <span>
-              <label for="start-time">Start Time:</label>
-              <input type="text" id="start-time" name="start-time" readonly>
-            </span>
-            <span>
-              <label for="end-time">End Time:</label>
-              <input type="text" id="end-time" name="end-time" readonly>
-            </span>
-            </div>
-        
-            {{-- <div>
-              <button id="play-btn">Play Trimmed Video</button>
-            </div>
-            
-            <div id="preview-container"></div> --}}
-            
-          </div>
-
+        <video id="video-player" controls>
+          <source src="{{ asset('videos/gallery/'.$video->video_path) }}" type="video/mp4">
+        </video>
+        <div class="trim-slider-container">
+          <div id="trim-slider"></div>
         </div>
-     
-        </p>
+        <div class="un-timer">
+          <div class="form-group">
+            <label for="starttime">Start Time:</label>
+            <input type="text" id="start-time" name="starttime" readonly>
+          </div>
+          <div class="form-group">
+            <label for="endtime">End Time:</label>
+            <input type="text" id="end-time" name="endtime" readonly>
+          </div>
+          <input type="hidden" id="video-id" name="video_id" value="{{ $video->id }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
     </div>
     </div>
 
+    
 
     <script>
       // Initialize the video player

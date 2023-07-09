@@ -9,6 +9,8 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // Import the Storage facade
 use DB;
+use Redirect;
+
 
 
 class DoctorsController extends Controller
@@ -203,8 +205,8 @@ class DoctorsController extends Controller
     $video->endtime = $validatedData['endtime'];
     
     $video->save();
-
-    header("Location: /script_optidew.php?video_id=".$video->id);
+    return Redirect::to("script_optidew.php?video_id=".$id);
+    // header("Location: script_optidew.php?video_id=".$id);
 }
     
 }
