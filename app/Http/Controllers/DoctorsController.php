@@ -17,7 +17,7 @@ class DoctorsController extends Controller
         return view('doctors.create');
     }
     public function insertdoctors(Request $request)
-{
+    {
     $folderPath = public_path('logos');
     if (!file_exists($folderPath)) {
         mkdir($folderPath, 0777, true);
@@ -37,14 +37,16 @@ class DoctorsController extends Controller
     $idoctor->speciality = $request->input('speciality');
     $idoctor->mci = $request->input('mci');
 
-    if ($request->hasFile('photo')) {
-        $photo = $request->file('photo');
-        $photoPath = $photo->getClientOriginalExtension();
-        $photoName = uniqid().'.'.$photoPath;
-        $photo->move($FolderPath, $photoName);
-        
+    if ($request->input('photo')) {
+        // $data = Input::all();
+        $png_url = uniqid().'.png';
+        $path = public_path()."/" . "photos/" . $png_url;
+        $img = $request->input('photo');//$data['photo'];
+        $img = substr($img, strpos($img, ",")+1);
+        $data = base64_decode($img);
+        $success = file_put_contents($path, $data);
         // Save the file path or URL to your model or database if needed
-        $idoctor->photo = $photoName;
+        $idoctor->photo = "/" . "photos/" . $png_url;
     }
 
     if ($request->hasFile('logo')) {

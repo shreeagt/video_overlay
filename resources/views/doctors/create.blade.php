@@ -1,6 +1,29 @@
 @extends('layouts.app-master')
 
 @section('content')
+
+<style>
+    label.cabinet{
+	display: block;
+	cursor: pointer;
+}
+
+label.cabinet input.file{
+	position: relative;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+
+#upload-demo{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+</style>
     <div class="bg-light p-4 rounded">
         <h1>Add Doctors</h1>
         <div class="lead">
@@ -24,7 +47,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="lastname" class="form-label">Clnic Name</label>
+                    <label for="lastname" class="form-label">Clinic Name</label>
                     <input value="{{ old('lastname') }}" 
                         type="text" 
                         class="form-control" 
@@ -124,7 +147,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="logo" class="form-label">CLinic Logo</label>
+                    <label for="logo" class="form-label">Clinic Logo</label>
                     <input value="{{ old('logo') }}" 
                         type="file" 
                         class="form-control" 
@@ -137,10 +160,11 @@
 
                 <div class="mb-3">
                     <label for="photo" class="form-label">Dr. Photo</label>
-                    <input value="{{ old('photo') }}" 
-                        type="file" 
+                        <input value="{{ old('photo') }}" 
+                        type="hidden" 
                         class="form-control" 
                         name="photo" 
+                        id="photo-cropped"
                         placeholder="Logo" required>
                     @if ($errors->has('photo'))
                         <span class="text-danger text-left">{{ $errors->first('photo') }}</span>
@@ -148,9 +172,53 @@
                 </div>
                
 
+                {{-- new lines  --}}
+
+                <!-- partial:index.partial.html -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label class="cabinet center-block">
+                            <figure>
+                                <img src="" class="gambar img-responsive img-thumbnail" name="croppedPhoto" id="item-img-output" />
+                                <figcaption><i class="fa fa-camera"></i></figcaption>
+                        </figure>
+                            <input type="file" class="item-img file center-block" name="file_photo"/>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+
+<div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+							<div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+				            <div id="upload-demo" class="center-block"></div>
+				      </div>
+							 <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="cropImageBtn" class="btn btn-primary">Crop</button>
+      </div>
+						    </div>
+						  </div>
+						</div>
+                
+
+
+
+
+
                 <button type="submit" class="btn btn-primary">Save Doctor</button>
             </form>
         </div>
 
     </div>
+
+
+
 @endsection
+
