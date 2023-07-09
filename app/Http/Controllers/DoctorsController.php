@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // Import the Storage facade
 use DB;
 
+
 class DoctorsController extends Controller
 {
     public function create()
@@ -17,7 +18,7 @@ class DoctorsController extends Controller
         return view('doctors.create');
     }
     public function insertdoctors(Request $request)
-{
+    {
     $folderPath = public_path('logos');
     if (!file_exists($folderPath)) {
         mkdir($folderPath, 0777, true);
@@ -37,14 +38,16 @@ class DoctorsController extends Controller
     $idoctor->speciality = $request->input('speciality');
     $idoctor->mci = $request->input('mci');
 
-    if ($request->hasFile('photo')) {
-        $photo = $request->file('photo');
-        $photoPath = $photo->getClientOriginalExtension();
-        $photoName = uniqid().'.'.$photoPath;
-        $photo->move($FolderPath, $photoName);
-        
+    if ($request->input('photo')) {
+        // $data = Input::all();
+        $png_url = uniqid().'.png';
+        $path = public_path()."/" . "photos/" . $png_url;
+        $img = $request->input('photo');//$data['photo'];
+        $img = substr($img, strpos($img, ",")+1);
+        $data = base64_decode($img);
+        $success = file_put_contents($path, $data);
         // Save the file path or URL to your model or database if needed
-        $idoctor->photo = $photoName;
+        $idoctor->photo = "/" . "photos/" . $png_url;
     }
 
     if ($request->hasFile('logo')) {
@@ -188,5 +191,20 @@ class DoctorsController extends Controller
         // Pass the video details to the view
         return view('show_video', compact('video'));
     }
+    public function trimvideo(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'starttime' => 'required',
+        'endtime' => 'required',
+    ]);
+
+    $video = Videos::findOrFail($id);
+    $video->starttime = $validatedData['starttime'];
+    $video->endtime = $validatedData['endtime'];
+    
+    $video->save();
+
+    header("Location: /script_optidew.php?video_id=".$video->id);
+}
     
 }

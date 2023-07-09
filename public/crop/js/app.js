@@ -28,7 +28,7 @@ new Vue({
         enable: true,
         position: 'left'
       },
-      transformOrigin: 'viewport',
+      transformOrigin: 'viewport'
     },
     cropme: {},
     el: {}
@@ -36,42 +36,42 @@ new Vue({
   watch: {
     options: {
       handler: function(val) {
-        this.cropme.reload(val)
+        this.cropme.reload(val);
       },
       deep: true
     }
   },
-  created:function() {
-    this.options = JSON.parse(JSON.stringify(this.defaultOptions))
+  created() {
+    this.options = JSON.parse(JSON.stringify(this.defaultOptions));
   },
-  mounted:function() {
-    this.init()
+  mounted() {
+    this.init();
+    window.crop = this.crop; // Attach the crop method to the global scope
   },
   methods: {
-    init:function() {
-      this.el = document.getElementById('cropme')
-      this.cropme = new Cropme(this.el, this.options)
+    init() {
+      this.el = document.getElementById('cropme');
+      this.cropme = new Cropme(this.el, this.options);
       this.cropme.bind({
-        url: 'images/pic.jpeg',
-      })
+        // url: 'images/pic.jpeg',
+        url: '/crop/images/pic.jpeg'
+      });
     },
-    getPosition:function() {
-      this.position = this.cropme.position()
-      $('#cropmePosition').modal()
+    getPosition() {
+      this.position = this.cropme.position();
+      $('#cropmePosition').modal();
     },
-    crop:function() {
-      let img = document.getElementById('cropme-result')
-      this.cropme.crop({
-        width: 600
-      }).then(function(res) {
-        img.src = res
-        $('#cropmeModal').modal()
-      })
+    crop() {
+      let img = document.getElementById('cropme-result');
+      this.cropme.crop({ width: 600 }).then((res) => {
+        img.src = res;
+        $('#cropmeModal').modal();
+      });
     },
-    reset:function() {
-      this.options = JSON.parse(JSON.stringify(this.defaultOptions))
-      this.cropme.destroy()
-      this.init()
+    reset() {
+      this.options = JSON.parse(JSON.stringify(this.defaultOptions));
+      this.cropme.destroy();
+      this.init();
     }
   }
-})
+});

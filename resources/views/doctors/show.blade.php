@@ -42,7 +42,7 @@
                                 @endif</td>
                             <td>{{ $doctor->email }}</td>
                             <td>@if ($doctor->photo)
-                                <img src="{{ asset('photos/'.$doctor->photo) }}" alt="Logo" width="50" height="50">
+                                <img src="{{ asset($doctor->photo) }}" alt="Logo" width="50" height="50">
                             @else
                                 No Logo
                             @endif</td>
