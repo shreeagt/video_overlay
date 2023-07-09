@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // Import the Storage facade
 use DB;
 
+
 class DoctorsController extends Controller
 {
     public function create()
@@ -188,5 +189,20 @@ class DoctorsController extends Controller
         // Pass the video details to the view
         return view('show_video', compact('video'));
     }
+    public function trimvideo(Request $request, $id)
+{
+    $validatedData = $request->validate([
+        'starttime' => 'required',
+        'endtime' => 'required',
+    ]);
+
+    $video = Videos::findOrFail($id);
+    $video->starttime = $validatedData['starttime'];
+    $video->endtime = $validatedData['endtime'];
+    
+    $video->save();
+
+    header("Location: /script_optidew.php?video_id=".$video->id);
+}
     
 }

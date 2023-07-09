@@ -1,5 +1,7 @@
 <?php
 $v_id = $_GET['video_id'];
+// $starttime = $_GET['starttime'];
+// $endtime = $_GET['endtime'];
 
 $servername = "localhost";
 $username = "root";
@@ -44,6 +46,7 @@ if ($v_result->num_rows > 0) {
 } else {
     echo "No videos found.";
 }
+header("Location: /thank_you/".$video->id);
 // header("Location: /thank_you/output_video=".$video->id);
 
 ?>

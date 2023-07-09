@@ -103,6 +103,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::post('/doctors/upload', 'DoctorsController@upload')->name('doctors.upload');
     Route::get('/thank_you/{id}', 'HomeController@thank');
     Route::get('/video/{id}', 'DoctorsController@showvideo');
+    Route::post('/trimvideo/{id}','DoctorsController@trimvideo')->name('trimvideo');
 });
 
 Route::get('/videoLis/{id}', [VideoController::class, 'updatevideo'])->name('videoList.update');
