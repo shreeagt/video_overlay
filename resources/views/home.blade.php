@@ -53,6 +53,7 @@
 .loading__text {
   font-weight: 500;
   font-size: 1.5rem;
+  color:#1a80b2;
 }
 
 .loading__bar {
@@ -96,19 +97,37 @@ p.empower-text {
    left:10px;
 }
 
-@media screen and (max-width: 768px){
-
-p.empower-text {
-    font-size: 14PX;
-}
-}
-
 a.logo.aj-logo {
     left: unset;
     right: unset;
     bottom: 10px;
     top: auto;
 }
+
+
+@media screen and (max-width: 768px){
+
+p.empower-text {
+    font-size: 14PX;
+}
+
+a.logo.aj-logo {
+    bottom: 50px;
+    top: auto;
+}
+.a.logo.aj-logo{
+   bottom: 50px;
+}
+
+.logoposition {
+    bottom: 50px;
+}
+.text-sm-center{
+   text-align: center;
+}
+
+}
+
 
 .loading_color{
    color:#1a80b2;
@@ -130,9 +149,9 @@ a.logo.aj-logo {
 
 
          <div class="loading">
-            <p class="loading__text">Processing...</p>
+            <p class="loading__text">Uploading...</p>
             <div class="loading__bar"></div>
-            <p class="loading__text loading_color">While we are processing, keep blinking your Eyes</p>
+            <p class="loading__text loading_color">While we are uploading, keep blinking your Eyes</p>
          </div>
       </div>
 
@@ -166,7 +185,7 @@ a.logo.aj-logo {
                   <div class="col-lg-12">
                      <div class="banner_text ">
                         <h1> Hello,  <span style="color:#fff">Dr. {{ $doctor->firstname }} </span><br>Please Upload your video. </h1>
-                        <form action="{{ route('doctors.upload') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('doctors.upload') }}" class="text-sm-center" method="post" enctype="multipart/form-data">
                            <div class="mt-2">
                               @include('layouts.partials.messages')
                           </div>

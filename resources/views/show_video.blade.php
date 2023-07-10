@@ -17,6 +17,69 @@
     <title>Ajanta Dry Eyes edit</title>
 </head>
 <style>
+   body{
+      overflow: hidden;
+   }
+
+   .d-none{
+    display:none!important;
+   }
+
+.loader_cover {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loading {
+  text-align: center;
+  /* width: min-content; */
+
+}
+
+
+
+.loading__text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color:#1a80b2;
+}
+
+.loading_color{
+   color:#1a80b2;
+}
+
+.loading__bar {
+  position: relative;
+  height: 5px;
+  width: 12rem;
+  background-color: darkgray;
+  border-radius: 1em;
+  overflow: hidden;
+  margin:auto;
+}
+
+.loading__bar::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff5, rgba(230, 230, 230, 0.891));
+  animation: loading-animation 1.3s infinite;
+  border-radius: 1em;
+}
+
+@keyframes loading-animation {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
     body{
         font-family: 'Open Sans', sans-serif;
     }
@@ -32,10 +95,14 @@
     text-decoration: none;
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #0d6efd;
     color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.noUi-connect {
+    background: #0d6efd;
 }
 
 
@@ -50,14 +117,13 @@ video#video-player {
 }
 
 /* Hover effect */
-.download-button:hover {
+/* .download-button:hover {
   background-color: #45a049;
 }
 
-/* Active effect */
 .download-button:active {
   background-color: #3e8e41;
-}
+} */
 
 .thank {
     max-width: 600px;
@@ -259,6 +325,16 @@ p.empower-text {
     /* background-image: url('/assets/images/thank_mob.png'); */
     background-image: url('/assets/images/login_mob.jpeg');
 }
+
+a.logo.aj-logo {
+    bottom: 50px;
+}
+
+.logo_location {
+    bottom: 50px;
+}
+
+
 }
 </style>
 <style>
@@ -268,12 +344,15 @@ p.empower-text {
   .thank_banner input[type="text"],
   .thank_banner select {
     display: inline-block;
-    padding: 15px;
+    padding: 10px 15px;
     background: #feffff;
     color: rgb(28, 37, 5);
     border-radius: 15px;
     /* color: aliceblue; */
+    width:70px;
+    font-weight: 900;
     margin: 15px;
+    border:none;
   }
 
   .thank_banner input[type="submit"] {
@@ -313,7 +392,29 @@ p.empower-text {
 </style>
 <body>
 
-    <a href="/" class="logo">
+  <div class="loader_cover d-none" id="loader_cover">
+    <a href="#" class="logo opti-logo">
+       <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+    </a>
+
+
+    <div class="loading">
+       <p class="loading__text">Processing...</p>
+       <div class="loading__bar"></div>
+       <p class="loading__text loading_color">While we are processing, keep blinking your Eyes</p>
+    </div>
+ </div>
+
+
+
+
+    <a href="{{ route('trimvideo', ['id' => $video->id]) }}" class="logo aj-logo">
+        <img src="{{asset('assets/images/ajanta-light.png')}}" >
+    </a>
+
+    <div class="thank_banner" id="thank_banner">
+
+      <a href="/" class="logo">
         {{-- <img src="{{asset('Optidewlogo.png')}}"> --}}
         <img src="{{asset('assets/images/ajantaone-logo.png')}}">
       </a>
@@ -327,11 +428,6 @@ p.empower-text {
         <img src="{{asset('lynx-logo.png')}}">
       </a>
 
-    <a href="{{ route('trimvideo', ['id' => $video->id]) }}" class="logo aj-logo">
-        <img src="{{asset('assets/images/ajanta-light.png')}}" >
-    </a>
-
-    <div class="thank_banner">
       <div class="text-center">
       <form method="post" action="{{ route('trimvideo', ['id' => $video->id]) }}">
         @csrf
@@ -356,6 +452,9 @@ p.empower-text {
         <button type="submit" class="download-button">Submit</button>
       </div>
     </form>
+
+    <p class="empower-text">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/optidew_logo.png')}}" class="ajanta_cover optidew_logo" alt="ajanta"></span>
+    </p>
     </div>
     </div>
 
@@ -446,6 +545,23 @@ p.empower-text {
       }
       
           </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+     const form = document.querySelector('form');
+     const loaderCover = document.getElementById('loader_cover');
+    //  const videobg = document.getElementById('thank_banner');
+     form.addEventListener('submit', (event) => {
+        // event.preventDefault(); 
+
+        loaderCover.classList.remove('d-none');
+          //  videobg.classList.add('d-none');
+          //  form.submit();
+     
+     });
+  });
+</script>
 
 </body>
 </html>

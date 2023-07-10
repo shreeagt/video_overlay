@@ -88,6 +88,10 @@ a.logo.aj-logo {
     background-image: url('/assets/images/login_mob.jpeg');
 }
 
+.logo {
+    bottom: 50px;
+}
+
 p.empower-text {
     font-size: 14PX;
 }
