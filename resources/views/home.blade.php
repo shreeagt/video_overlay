@@ -107,6 +107,9 @@ a.logo.aj-logo {
 
 @media screen and (max-width: 768px){
 
+   .text-custom-center{
+   text-align: center;
+}
 p.empower-text {
     font-size: 14PX;
 }
@@ -122,9 +125,7 @@ a.logo.aj-logo {
 .logoposition {
     bottom: 50px;
 }
-.text-sm-center{
-   text-align: center;
-}
+
 
 }
 
@@ -185,7 +186,7 @@ a.logo.aj-logo {
                   <div class="col-lg-12">
                      <div class="banner_text ">
                         <h1> Hello,  <span style="color:#fff">Dr. {{ $doctor->firstname }} </span><br>Please Upload your video. </h1>
-                        <form action="{{ route('doctors.upload') }}" class="text-sm-center" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('doctors.upload') }}" class="text-custom-center" method="post" enctype="multipart/form-data">
                            <div class="mt-2">
                               @include('layouts.partials.messages')
                           </div>

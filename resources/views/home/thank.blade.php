@@ -24,7 +24,7 @@
     text-decoration: none;
     border-radius: 5px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #0d6efd;
     color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -32,12 +32,12 @@
 
 /* Hover effect */
 .download-button:hover {
-  background-color: #45a049;
+    background-color: #0d6efd;
 }
 
 /* Active effect */
 .download-button:active {
-  background-color: #3e8e41;
+    background-color: #0d6efd;
 }
 
 .thank {
