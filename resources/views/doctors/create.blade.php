@@ -19,8 +19,8 @@ label.cabinet input.file{
 }
 
 #upload-demo{
-	width: 250px;
-	height: 250px;
+	width: 450px;
+	height: 450px;
   padding-bottom:25px;
 }
 </style>
