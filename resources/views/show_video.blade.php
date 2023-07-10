@@ -115,10 +115,10 @@ video#video-player {
 .thank span {
     display: inline-block;
     padding: 20px;
-    background: #1a81b0;
+    background: #06dd72;
     color: black;
     border-radius: 20px;
-    color: aliceblue;
+    /* color: aliceblue; */
     margin: 20px;
 }
 
@@ -176,6 +176,7 @@ video#videoPlayer {
 
 *{
     margin:0;
+    color: rgb(243, 248, 245);
     padding:0;
 }
 
@@ -221,8 +222,12 @@ span.br {
 
 .thank span {
     display: inline-block;
-    padding: 14px;
-    margin: 15px;
+    padding: 20px;
+    background: #06dd72;
+    color: black;
+    border-radius: 20px;
+    /* color: aliceblue; */
+    margin: 20px;
 }
 
 .thank {
@@ -255,6 +260,56 @@ p.empower-text {
     background-image: url('/assets/images/login_mob.jpeg');
 }
 }
+</style>
+<style>
+  /* Existing CSS styles */
+
+  /* New CSS style for form elements */
+  .thank_banner input[type="text"],
+  .thank_banner select {
+    display: inline-block;
+    padding: 15px;
+    background: #feffff;
+    color: rgb(28, 37, 5);
+    border-radius: 15px;
+    /* color: aliceblue; */
+    margin: 15px;
+  }
+
+  .thank_banner input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .thank_banner input[type="submit"]:hover {
+      background-color: #45a049;
+  }
+</style>
+<style>
+  /* Existing CSS styles */
+
+  /* Add new CSS style for submit button */
+  .thank_banner input[type="submit"] {
+      background-color: #4CAF50;
+      color: #f1eded;
+      transition: background-color 0.3s ease;
+  }
+
+  /* Add hover effect for submit button */
+  .thank_banner input[type="submit"]:hover {
+      background-color: #45a049;
+  }
+
+  /* Add active effect for submit button */
+  .thank_banner input[type="submit"]:active {
+      background-color: #3e8e41;
+  }
 </style>
 <body>
 
@@ -298,7 +353,7 @@ p.empower-text {
           </div>
           <input type="hidden" id="video-id" name="video_id" value="{{ $video->id }}">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="download-button">Submit</button>
       </div>
     </form>
     </div>
