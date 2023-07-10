@@ -19,9 +19,9 @@ label.cabinet input.file{
 }
 
 #upload-demo{
-	width: 450px;
-	height: 450px;
-  padding-bottom:25px;
+	width: 340px;
+	height: 340px;
+  padding-bottom:15px;
 }
 </style>
     <div class="bg-light p-4 rounded">

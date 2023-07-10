@@ -327,7 +327,7 @@ p.empower-text {
 }
 
 a.logo.aj-logo {
-    bottom: 50px;
+    bottom: 30px;
 }
 
 .logo_location {
