@@ -292,7 +292,7 @@ a.logo.aj-logo {
 
          const fileInput = document.querySelector('.drop-zone__input');
          const allowedExtensions = ['mp4', 'avi', 'mov']; // Allowed video file extensions
-         const maxSizeInBytes = 100 * 1024 * 1024; // 10MB
+         const maxSizeInBytes = 200 * 1024 * 1024; // 10MB
 
          const file = fileInput.files[0];
 
@@ -312,25 +312,25 @@ a.logo.aj-logo {
 
          // Check the file size
          if (file.size > maxSizeInBytes) {
-            alert('File size exceeds the limit of 100MB.');
+            alert('File size exceeds the limit of 200 MB.');
             return;
          }
 
          // Create a temporary video element to load the selected video
-         const videoElement = document.createElement('video');
-         videoElement.addEventListener('loadedmetadata', () => {
-            const targetWidth = 16;
-            const targetHeight = 9;
-            const videoWidth = videoElement.videoWidth;
-            const videoHeight = videoElement.videoHeight;
+         // const videoElement = document.createElement('video');
+         // videoElement.addEventListener('loadedmetadata', () => {
+         //    const targetWidth = 16;
+         //    const targetHeight = 9;
+         //    const videoWidth = videoElement.videoWidth;
+         //    const videoHeight = videoElement.videoHeight;
 
-            const ratio = videoWidth / videoHeight;
-            const expectedRatio = targetWidth / targetHeight;
+         //    const ratio = videoWidth / videoHeight;
+         //    const expectedRatio = targetWidth / targetHeight;
 
-            if (Math.abs(ratio - expectedRatio) > 0.01) {
-               alert('The video must have a size ratio of 16:9.');
-               return;
-            }
+         //    if (Math.abs(ratio - expectedRatio) > 0.01) {
+         //       alert('The video must have a size ratio of 16:9.');
+         //       return;
+         //    }
 
             // Show the loader
             loaderCover.classList.remove('d-none');
