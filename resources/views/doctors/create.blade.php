@@ -110,7 +110,7 @@ label.cabinet input.file{
                     <label for="speciality" class="form-label">Speciality</label>
                     <select class="form-control" name="speciality" required>
                         <option value="">Select Speciality</option>
-                        <option value="General Opthamologist" {{ old('speciality') == 'General Opthamologist' ? 'selected' : '' }}>General Opthamologist</option>
+                        <option value="General Opthalmologist" {{ old('speciality') == 'General Opthalmologist' ? 'selected' : '' }}>General Opthalmologist</option>
                         <option value="Retina Specialist" {{ old('speciality') == 'Retina Specialist' ? 'selected' : '' }}>Retina Specialist</option>
                         <option value="Cornea Specialist" {{ old('speciality') == 'Cornea Specialist' ? 'selected' : '' }}>Cornea Specialist</option>
                         <option value="Glaucoma Specialist" {{ old('speciality') == 'Glaucoma Specialist' ? 'selected' : '' }}>Glaucoma Specialist</option>
