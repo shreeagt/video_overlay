@@ -31,7 +31,7 @@
                 <label for="speciality">Speciality</label>
                 <select name="speciality" id="speciality" class="form-control">
                     <option value="">Select Speciality</option>
-                    <option value="General Opthalmologist" {{ $doctor->speciality == 'General Opthalmologist' ? 'selected' : '' }}>General Opthalmologist</option>
+                    <option value="General Opthalmologist" {{ $doctor->speciality == 'General Opthalmologist' ? 'selected' : '' }}>General Ophthalmologist</option>
                     <option value="Retina Specialist" {{ $doctor->speciality == 'Retina Specialist' ? 'selected' : '' }}>Retina Specialist</option>
                     <option value="Cornea Specialist" {{ $doctor->speciality == 'Cornea Specialist' ? 'selected' : '' }}>Cornea Specialist</option>
                     <option value="Glaucoma Specialist" {{ $doctor->speciality == 'Glaucoma Specialist' ? 'selected' : '' }}>Glaucoma Specialist</option>
