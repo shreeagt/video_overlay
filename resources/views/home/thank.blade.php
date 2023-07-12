@@ -270,7 +270,7 @@ p.empower-text {
             </div>
             <div class="video_box" style="text-align: center;margin:auto;">
                 <p class="" style="color:#ffffff">
-                    Thank you for submitting your video. Our team will  get back to you</p>
+                    Thank you for submitting your video.<br> Our team will  get back to you</p>
             
                 {{-- <h2 style="">Preview</h2> --}}
                 {{-- <video id="videoPlayer" controls>
