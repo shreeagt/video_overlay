@@ -21,8 +21,8 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Clinick Name</th>
-                        <th>Button</th>
+                        <th>Clinic Name</th>
+                        {{-- <th>Button</th> --}}
                         <th>Video status</th>
                         <th>Play</th>
                     </tr>
@@ -33,11 +33,12 @@
                             <tr>
                                 @php
                                     $video_for_modal = 'videos/gallery/' . $video->video_path;
+                                    $video_for_modal_preview = 'videos/gallery/' . $video->outputvideo;
                                 @endphp
                                 <td>{{ $i }}</td>
                                 <td>{{ $video->firstname }}</td>
                                 <td>{{ $video->lastname }}</td>
-                                <td>
+                                {{-- <td>
                                     @if ($video->dr_video_status == '')
                                         <a href="{{ route('videoList.update', $column_id = $video->id) }}"
                                             class="btn btn-success">Approve</a>
@@ -47,26 +48,36 @@
                                         <a href="#" class="btn btn-secondary ">Approve</a>
                                         <a href="#" class="btn btn-secondary ">Reject</a>
                                     @endif
-                                </td>
+                                </td> --}}
                                 <td>
-                                    @if ($video->dr_video_status == '')
-                                        <a href="#" class="btn btn-warning">Pending</a>
-                                    @elseif($video->dr_video_status == 'Approved')
-                                        <a href="#" class="btn btn-primary">Approve</a>
+                                    @if ($video->dr_video_status == 'Download')
+                                        <a href="#" class="btn btn-success">Download</a>
                                     @else
-                                        <a href="#" class="btn btn-dark">Rejected</a>
+                                        <a href="#" class="btn btn-warning">Pending</a>
                                     @endif
                                 </td>
                                 {{-- <td>{{$video->doctor_instruction}}</td> --}}
-                                <td><a href="#" class="btn btn-info playbtn_video" id="playButton">Play</a></td>
-                                <div id="videoModal" class="modal open_video">
-                                    <div class="modal-content">
-                                        <span class="close close_video">&times;</span>
-                                        {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
-                                        <video src="{{ asset($video_for_modal) }}" controls
-                                            style="justify-content-center align-item-center"></video>
-                                    </div>
-                                </div>
+                                <td>
+                                    @if ($video->dr_video_status == 'Download')
+                                        <a href="#" class="btn btn-info playbtn_video" id="playButton">Play</a></td>
+                                        <div id="videoModal" class="modal open_video">
+                                            <div class="modal-content">
+                                                <span class="close close_video">&times;</span>
+                                                {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
+                                                <video src="{{ asset($video_for_modal) }}" controls style="justify-content-center align-item-center"></video>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <a href="#" class="btn btn-info playbtn_video" id="previewButton">Play</a></td>
+                                        <div id="videoModal" class="modal open_video">
+                                            <div class="modal-content">
+                                                <span class="close close_video">&times;</span>
+                                                {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
+                                                <video src="{{ asset($video_for_modal_preview) }}" controls style="justify-content-center align-item-center"></video>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </td>
                             </tr>
                             @php
                                 $i++;
@@ -87,7 +98,7 @@
                         <th>Id</th>
                         <th>So Name</th>
                         <th>Doctor Name</th>
-                        <th>Clinick Name</th>
+                        <th>Clinic Name</th>
                         <th>Clinick Address</th>
                         <th>Play</th>
                     </tr>
