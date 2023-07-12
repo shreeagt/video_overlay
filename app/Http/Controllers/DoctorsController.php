@@ -208,5 +208,21 @@ class DoctorsController extends Controller
     return Redirect::to("script_optidew.php?video_id=".$id);
     // header("Location: script_optidew.php?video_id=".$id);
 }
+public function agtvideolist()
+{
+    $agtvideolist = Videos::join('doctors', 'videos.drid', '=', 'doctors.id')
+                        ->select('videos.*', 'doctors.*')
+                        ->orderBy('videos.drid', 'desc')
+                        ->get();
+                       
+    $videoFilesExist = [];
+    foreach ($agtvideolist as $video) {
+        $videoFilePath = public_path('videos/gallery/' . $video->video_path);
+        $videoFilesExist[] = file_exists($videoFilePath);
+    }
+
+    
+    return view('agtvideolist', compact('agtvideolist', 'videoFilesExist'));
+}
     
 }
