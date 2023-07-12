@@ -51,7 +51,7 @@
                                 </td> --}}
                                 <td>
                                     @if ($video->dr_video_status == 'Download')
-                                        <a href="#" class="btn btn-success">Download</a>
+                                        <a href="{{ asset($video_for_modal_preview) }}" class="btn btn-success" download>Download</a>
                                     @else
                                         <a href="#" class="btn btn-warning">Pending</a>
                                     @endif
