@@ -269,15 +269,18 @@ p.empower-text {
                 <span><i class="fa fa-check" style="font-size:36px"></i></span>
             </div>
             <div class="video_box" style="text-align: center;margin:auto;">
-                <h2 style="">Preview</h2>
-                <video id="videoPlayer" controls>
-                    {{-- <source src="{{asset('/videos/gallery/sample-5s.mp4')}}" type="video/mp4"> --}}
-                    <source src="/videos/gallery/{{ $video->outputvideo }}" type="video/mp4">
+                <p class="" style="color:#ffffff">
+                    Thank you for submitting your video.<br> Our team will  get back to you</p>
             
-                  </video>
+                {{-- <h2 style="">Preview</h2> --}}
+                {{-- <video id="videoPlayer" controls>
+                    <source src="/videos/gallery/{{ $video->outputvideo }}" type="video/mp4">
+                  </video> --}}
+
+
             </div>
 
-            <button class="download-button">Download</button>
+            {{-- <button class="download-button">Download</button> --}}
         </div>
         <p class="empower-text text-center">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/optidew_logo.png')}}" class="ajanta_cover optidew_logo" alt="Optidew"></span>
         </p>
