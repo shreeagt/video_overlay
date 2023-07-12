@@ -59,21 +59,21 @@
                                 {{-- <td>{{$video->doctor_instruction}}</td> --}}
                                 <td>
                                     @if ($video->dr_video_status == 'Download')
-                                        <a href="#" class="btn btn-info playbtn_video" id="playButton">Play</a></td>
-                                        <div id="videoModal" class="modal open_video">
-                                            <div class="modal-content">
-                                                <span class="close close_video">&times;</span>
-                                                {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
-                                                <video src="{{ asset($video_for_modal) }}" controls style="justify-content-center align-item-center"></video>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <a href="#" class="btn btn-info playbtn_video" id="previewButton">Play</a></td>
+                                        <a href="#" class="btn btn-info playbtn_video" id="playButton">Play Generated Video</a></td>
                                         <div id="videoModal" class="modal open_video">
                                             <div class="modal-content">
                                                 <span class="close close_video">&times;</span>
                                                 {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
                                                 <video src="{{ asset($video_for_modal_preview) }}" controls style="justify-content-center align-item-center"></video>
+                                            </div>
+                                        </div>
+                                    @else
+                                        <a href="#" class="btn btn-info playbtn_video" id="previewButton">Play Uploaded Video</a></td>
+                                        <div id="videoModal" class="modal open_video">
+                                            <div class="modal-content">
+                                                <span class="close close_video">&times;</span>
+                                                {{-- <embed src="{{asset($video_for_modal)}}" controls autoplay style="justify-content-center align-item-center"/> --}}
+                                                <video src="{{ asset($video_for_modal) }}" controls style="justify-content-center align-item-center"></video>
                                             </div>
                                         </div>
                                     @endif
