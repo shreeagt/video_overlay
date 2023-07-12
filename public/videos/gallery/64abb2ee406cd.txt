@@ -1,0 +1,3 @@
+file '/var/www/html/ajanta/video_overlay/public/videos/gallery/pre_video_final64abb2bda3bcf.MOV' 
+ file '/var/www/html/ajanta/video_overlay/public/videos/gallery/output64abb2bda3bcf.MOV' 
+ file '/var/www/html/ajanta/video_overlay/post_shoot.mp4'
