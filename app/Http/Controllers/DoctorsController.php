@@ -211,9 +211,10 @@ class DoctorsController extends Controller
 public function agtvideolist()
 {
     $agtvideolist = Videos::join('doctors', 'videos.drid', '=', 'doctors.id')
-                        ->select('videos.*', 'doctors.*')
-                        ->orderBy('videos.drid', 'desc')
-                        ->get();
+        ->select('videos.id', 'videos.drid','doctors.firstname', 'doctors.speciality' ,'doctors.lastname', 'doctors.email', 'doctors.contacno', 'doctors.city', 'videos.dr_video_status', 'videos.so_id', 'videos.starttime', 'videos.endtime', 'videos.video_path', 'doctors.photo', 'doctors.logo')
+        ->where('videos.dr_video_status', '') // Filter by dr_video_status
+        ->orderBy('videos.id', 'desc')
+        ->get();
                        
     $videoFilesExist = [];
     foreach ($agtvideolist as $video) {
@@ -221,8 +222,48 @@ public function agtvideolist()
         $videoFilesExist[] = file_exists($videoFilePath);
     }
 
-    
     return view('agtvideolist', compact('agtvideolist', 'videoFilesExist'));
 }
+
+public function videostatus($id)
+{
+   $video = Videos::findOrFail($id);
+   $video->dr_video_status = 'Download';
+   $video->save();
+   
+   return redirect()->route('agtvideo');
+}
+public function videoupload($id)
+{
+    $video= Videos::findorfail($id);
     
+    return view('videoupload', compact('video'));
+}
+    
+public function outputupload(Request $request, $id)
+{
+    $video = Videos::findOrFail($id);
+    
+    $request->validate([
+        'outputvideo' => 'mimetypes:video/mp4,video/avi,video/quicktime|max:5242880', // Maximum file size is 5MB
+    ]);
+    
+    // Create the videos/gallery folder if it doesn't exist
+    $folderPath = public_path('videos/gallery');
+    if (!file_exists($folderPath)) {
+        mkdir($folderPath, 0777, true);
+    }
+    
+    if ($request->hasFile('outputvideo')) {
+        $extension = $request->file('outputvideo')->getClientOriginalExtension();
+        $videoPath = uniqid().'.'.$extension;
+        $request->file('outputvideo')->move($folderPath, $videoPath);
+    
+        // Update the outputvideo column with the new video path
+        $video->outputvideo = $videoPath;
+        $video->save();
+    }
+
+    return redirect()->route('agtvideo');
+}
 }
