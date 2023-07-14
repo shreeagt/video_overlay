@@ -11267,6 +11267,10 @@ a.logo img {
   max-width: 100px;
 }
 
+a.logo.opti-logo img {
+  width: 80px;
+}
+
 .optidew_logo{
   display: block;
   margin: auto;

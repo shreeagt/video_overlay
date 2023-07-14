@@ -635,6 +635,7 @@
 @media only screen and (max-width: 767.98px){
 	/* ExTra Class Start*/
 	a.logo img {max-width: 100px;}
+	a.logo.opti-logo img {width: 70px;}
 	.bg-light.p-4.rounded {overflow-x: auto;}
 	.dn-sm, .dn-767 {display: none !important;}
 	.db-sm, .db-767 {display: block !important;}
