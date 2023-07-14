@@ -219,7 +219,7 @@ span input {
 
 video#videoPlayer {
     max-width: 200PX;
-    max-height: 200PX;
+    max-height: 300px;
 }
 
 .video_box {

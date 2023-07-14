@@ -106,6 +106,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::post('/trimvideo/{id}','DoctorsController@trimvideo')->name('trimvideo');
 });
 
+Route::get('/agtvideolist', [DoctorsController::class, 'agtvideolist'])->name('agtvideo');
+Route::get('/agtvideolist/{id}', [DoctorsController::class, 'videostatus'])->name('agtvideostatus');
+Route::get('/agtvideoupload/{id}', [DoctorsController::class, 'videoupload'])->name('agtvideoupload');
+Route::post('/agtoutput/{id}', [DoctorsController::class, 'outputupload'])->name('agtoutputupload');
+
 Route::get('/videoLis/{id}', [VideoController::class, 'updatevideo'])->name('videoList.update');
 Route::get('/videoLiis/{id}', [VideoController::class, 'rject'])->name('videoLiist.reject');
 
