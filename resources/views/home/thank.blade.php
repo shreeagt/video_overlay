@@ -110,6 +110,9 @@
     max-width: 150px;
 }
 
+a.logo.opti-logo img {
+    max-width: 80px;
+}
 .logo{
     position: absolute;
     top: 10px;

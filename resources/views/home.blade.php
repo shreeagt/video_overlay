@@ -104,12 +104,17 @@ a.logo.aj-logo {
     top: auto;
 }
 
+.text-custom-center{
+   text-align: center;
+}
 
 @media screen and (max-width: 768px){
 
    .text-custom-center{
    text-align: center;
 }
+
+
 p.empower-text {
     font-size: 14PX;
 }

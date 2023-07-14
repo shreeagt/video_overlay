@@ -73,6 +73,11 @@ body {
     top:10px;
     right: auto;
 }
+
+a.logo.opti-logo img{
+width:80px;
+}
+
 p.empower-text {
     font-size: 20px;
     color: aliceblue;
