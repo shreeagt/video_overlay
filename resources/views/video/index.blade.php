@@ -52,7 +52,7 @@
                                 <td>
                                     @if ($video->dr_video_status == 'Download')
                                         <a href="{{ asset($video_for_modal_preview) }}" class="btn btn-success" download>Download</a>
-                                    @else
+                                        <a class="btn  btn-primary copy-icon ml10" data-copy="{{ asset('videos/gallery/' . $video->outputvideo) }}">Copy</a>                                    @else
                                         <a href="#" class="btn btn-warning">Pending</a>
                                     @endif
                                 </td>
@@ -174,4 +174,28 @@
         })
     }
 </script>
+
+<script>
+
+    const copyButtons = document.querySelectorAll('.copy-icon');
+  
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const copyText = button.getAttribute('data-copy');
+        const tempInput = document.createElement('input');
+        tempInput.value = copyText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        button.classList.add('copied');
+        setTimeout(() => {
+          button.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  
+  
+      </script>
+
 @endsection
