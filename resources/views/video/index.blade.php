@@ -99,16 +99,17 @@
                         <th>So Name</th>
                         <th>Doctor Name</th>
                         <th>Clinic Name</th>
-                        <th>Clinick Address</th>
+                        <th>Status</th>
                         <th>Play</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (isset($doctor_details[0]->firstname) != '')
                         @foreach ($doctor_details as $details)
-                            @php
-                                $video_for_modal = 'videos/gallery/' . $details->video_path;
-                            @endphp
+                        @php
+                            $video_for_modal = 'videos/gallery/' . $details->video_path;
+                            // $video_for_modal_preview = 'videos/gallery/' . $details->outputvideo;
+                        @endphp
                             <tr>
 
                                 @foreach ($so_details as $so_detail)
@@ -119,7 +120,17 @@
                                 @endforeach
                                 <td>{{ $details->firstname }}</td>
                                 <td>{{ $details->lastname }}</td>
-                                <td>{{ $details->city }}</td>
+                                <td>
+                                    @if ($details->dr_video_status == 'Download')
+                                        <a href="{{ asset($video_for_modal) }}" class="btn btn-success" download>Download</a>
+                                        <a class="btn  btn-primary copy-icon ml10" data-copy="{{ asset('videos/gallery/' . $details->video_path) }}">Copy</a>                                    @else
+                                        <a href="#" class="btn btn-warning">Pending</a>
+                                    @endif
+                                    @if ($details->dr_video_status == '')
+                                        <a class="btn  btn-primary copy-icon ml10" data-copy="{{ asset('videos/gallery/' . $details->video_path) }}">Copy</a>                                    @else
+                                        {{-- <a href="#" class="btn btn-warning">Pending</a> --}}
+                                    @endif
+                                </td>
                                 {{-- <td>{{$details->doctor_instruction}}</td> --}}
                                 <td><a href="#" class="btn btn-info playbtn_video" id="playButton">Play</a></td>
                                 <div id="videoModal" class="modal open_video">
