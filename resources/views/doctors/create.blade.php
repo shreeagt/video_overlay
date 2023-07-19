@@ -105,10 +105,21 @@ label.cabinet input.file{
                         <span class="text-danger text-left">{{ $errors->first('contacno') }}</span>
                     @endif
                 </div>
-
                 <div class="mb-3">
                     <label for="speciality" class="form-label">Speciality</label>
-                    <select class="form-control" name="speciality" required>
+                    <input value="{{ old('speciality') }}" 
+                        type="text" 
+                        class="form-control" 
+                        name="speciality" 
+                        placeholder="Speciality" required>
+                    @if ($errors->has('speciality'))
+                        <span class="text-danger text-left">{{ $errors->first('speciality') }}</span>
+                    @endif
+                </div>
+
+                {{-- <div class="mb-3">
+                    <label for="speciality" class="form-label">Speciality</label>
+                    <select class="form-control" name="speciality" >
                         <option value="">Select Speciality</option>
                         <option value="General Opthalmologist" {{ old('speciality') == 'General Ophthalmologist' ? 'selected' : '' }}>General Ophthalmologist</option>
                         <option value="Retina Specialist" {{ old('speciality') == 'Retina Specialist' ? 'selected' : '' }}>Retina Specialist</option>
@@ -120,7 +131,7 @@ label.cabinet input.file{
                     @if ($errors->has('speciality'))
                         <span class="text-danger text-left">{{ $errors->first('speciality') }}</span>
                     @endif
-                </div>
+                </div> --}}
 
                 <div class="mb-3">
                     <label for="city" class="form-label">City</label>
@@ -135,12 +146,12 @@ label.cabinet input.file{
                 </div>
 
                 <div class="mb-3">
-                    <label for="mci" class="form-label">MCI Registration Number</label>
+                    <label for="mci" class="form-label">Doctors Code</label>
                     <input value="{{ old('mci') }}" 
                         type="text" 
                         class="form-control" 
                         name="mci" 
-                        placeholder="MCI Registration Number" required>
+                        placeholder="Doctors Code" required>
                     @if ($errors->has('mci'))
                         <span class="text-danger text-left">{{ $errors->first('mci') }}</span>
                     @endif

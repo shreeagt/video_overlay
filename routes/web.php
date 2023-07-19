@@ -41,6 +41,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Login Routes
          */
+        Route::get('/login', function() {
+            return Redirect ('/');
+        });
         Route::get('/', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
 

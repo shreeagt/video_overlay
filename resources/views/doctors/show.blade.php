@@ -16,7 +16,7 @@
                         <th>Clinic Name</th>
                         <th>Contact No</th>
                         <th>City</th>
-                        <th>Mci Registration Number</th>
+                        <th>Doctors Code</th>
                         <th>Speciality</th>
                         <th>Logo</th>
                         <th>Email</th>
