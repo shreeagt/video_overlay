@@ -408,7 +408,7 @@ a.logo.aj-logo {
 
 
 
-    <a href="{{ route('trimvideo', ['id' => $video->id]) }}" class="logo aj-logo">
+    <a href="" class="logo aj-logo">
         <img src="{{asset('assets/images/ajanta-light.png')}}" >
     </a>
 
