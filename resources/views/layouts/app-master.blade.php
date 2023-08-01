@@ -54,7 +54,8 @@
         <div class="col-sm-8 col-xl-10 d-none d-md-block">
           <div class="text-center text-lg-end header_right_widgets">
             <ul class="mb0 d-flex justify-content-center justify-content-sm-end">
-              <li class=""><a class="text-center"  style="text-align: right;" href="/logout"> Logout <span class="flaticon-exit"></span></a></li>
+              {{-- <li class=""><a class="text-center"  style="text-align: right;" href="/logout"> Logout <span class="flaticon-exit"></span></a></li> --}}
+              <li class=""><span class="d-inline-block">Hi {{auth()->user()->firstname}}</span><a class="text-center d-inline-block"  style="text-align: right;" href="/logout">Logout <span class="flaticon-exit"></span></a></li>
             </ul>
           </div>
         </div>
