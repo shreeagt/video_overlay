@@ -394,7 +394,7 @@ a.logo.aj-logo {
 
   <div class="loader_cover d-none" id="loader_cover">
     <a href="#" class="logo opti-logo">
-       <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+       <img src="{{asset('assets/images/home/zaha_logo_final.png')}}" >
     </a>
 
 
@@ -420,7 +420,7 @@ a.logo.aj-logo {
       </a>
 
       <a href="#" class="logo opti-logo">
-        <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+        <img src="{{asset('assets/images/home/zaha_logo_final.png')}}" >
      </a>
      
     <a href="/" class="logo logo_location">
@@ -453,7 +453,7 @@ a.logo.aj-logo {
       </div>
     </form>
 
-    <p class="empower-text">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/optidew_logo.png')}}" class="ajanta_cover optidew_logo" alt="ajanta"></span>
+    <p class="empower-text">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/zaha_logo_final.png')}}" class="ajanta_cover optidew_logo" alt="ajanta"></span>
     </p>
     </div>
     </div>

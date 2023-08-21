@@ -11264,11 +11264,13 @@ span.active_status.active{
 }
 
 a.logo img {
-  max-width: 100px;
+  max-width: 150px;
 }
 
 a.logo.opti-logo img {
-  width: 80px;
+  /* width: 80px; */
+  width: 150px;
+  max-width:150px;
 }
 
 .optidew_logo{

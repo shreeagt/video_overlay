@@ -44,7 +44,7 @@
             <div class="dashboard_header_logo">
               <a href="/" class="logo">
                 {{-- <span class="text-thm">.</span> --}}
-              <img src={{asset('assets/images/home/optidew_dry_eye.png')}}>
+              <img src={{asset('assets/images/home/zaha_logo_final.png')}}>
               {{-- <img src={{asset('assets/images/ajantaone-logo.png')}}> --}}
             </a>
             </div>

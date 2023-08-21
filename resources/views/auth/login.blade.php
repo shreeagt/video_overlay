@@ -75,7 +75,9 @@ body {
 }
 
 a.logo.opti-logo img{
-width:80px;
+  /* width: 80px; */
+  width: 150px;
+  max-width:150px;
 }
 
 p.empower-text {
@@ -131,7 +133,7 @@ p.empower-text {
   </a>
 
   <a href="#" class="logo opti-logo">
-    <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+    <img src="{{asset('assets/images/home/zaha_logo_final.png')}}" >
  </a>
  
 <a href="#" class="logo aj-logo">

@@ -111,7 +111,9 @@
 }
 
 a.logo.opti-logo img {
-    max-width: 80px;
+    /* max-width: 80px; */
+    width: 150px;
+  max-width:150px;
 }
 .logo{
     position: absolute;
@@ -241,7 +243,7 @@ p.empower-text {
       </a>
 
       <a href="#" class="logo opti-logo">
-        <img src="{{asset('assets/images/home/optidew_dry_eye.png')}}" >
+        <img src="{{asset('assets/images/home/zaha_logo_final.png')}}" >
      </a>
      
     <a href="/" class="logo logo_location">
@@ -285,7 +287,7 @@ p.empower-text {
 
             {{-- <button class="download-button">Download</button> --}}
         </div>
-        <p class="empower-text text-center">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/optidew_logo.png')}}" class="ajanta_cover optidew_logo" alt="Optidew"></span>
+        <p class="empower-text text-center">An educational initiative by the <span class="ajanta_color"><img src="{{asset('assets/images/ajanta_light_logo.png')}}" class="ajanta_cover" alt="ajanta"></span><span class="br"> makers of <img src="{{asset('/zaha_logo_final.png')}}" class="ajanta_cover optidew_logo" alt="Optidew"></span>
         </p>
     </div>
     </div>
